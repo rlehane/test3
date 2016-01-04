@@ -19,7 +19,7 @@ body {
   background-color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, {
   color: #333;
 }
 
@@ -32,7 +32,7 @@ h3 {
   font-size: 18px;
 }
 
-h7 {
+h6 {
   font-size: 30px;
 }
 
@@ -136,6 +136,15 @@ section {
 #home-slider {
   overflow: hidden;
   position: relative;
+}
+#home-slider .logo-on {
+  position: absolute;
+  top: 20%;
+  margin-top: -54px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 15;
 }
 
 #home-slider .caption {
