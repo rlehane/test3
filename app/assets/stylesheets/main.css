@@ -13,7 +13,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   color: #666;
   background-color: #fff;
@@ -30,6 +30,14 @@ h2 {
 
 h3 {
   font-size: 18px;
+}
+
+h4 {
+  font-size: 25px;
+  font-weight: 4px;
+  text-align: center;
+ /* padding-top: 30px;*/
+ /* position: center;*/
 }
 
 h6 {
@@ -306,19 +314,28 @@ section {
   transition: background-color 0.2s ease;
 }
 
-.our-services .col-sm-4:hover .service-icon {
+.our-services .col-sm-6:hover .service-icon {
   background-color: #8736D1;
 }
 
-.our-services .col-sm-4 {
+.our-services .col-sm-6 {
   border-right:1px solid #f2f2f2;
   border-bottom:1px solid #f2f2f2;
+  border-left:1px solid #f2f2f2;
+  border-top:1px solid #f2f2f2;
   padding-bottom: 50px;
+  padding-top: 50px;
 }
 
-.our-services .col-sm-4:nth-child(4), 
+/*.our-services .col-sm-4:nth-child(4), 
 .our-services .col-sm-4:nth-child(5), 
-.our-services .col-sm-4:nth-child(6) {
+.our-services .col-sm-4:nth-child(6) {*/
+
+.our-services .col-sm-6:nth-child(4), 
+.our-services .col-sm-6:nth-child(5),  
+
+/*{
+
   border-bottom:0;
   padding-top: 60px;
 }
@@ -330,19 +347,26 @@ section {
 
 .service-info h3 {
   margin-top: 35px;
-}
+}*/
 
 /*************************
 ********About CSS*******
 **************************/
 #about-us {
-  background-image: url(../assets/bg.jpg);
+  /*background-image: url(../assets/bg.jpg);*/
+  background-color: #fff;
   padding: 60px 0;
 }
 
 #about-us h2 {
   margin-top: 0;
-  color: #fff;
+  padding-bottom: 50px;
+  color: #666;
+}
+
+#about-us h3 {
+  margin-top: 0;
+  color: #666;
 }
 
 #about-us .lead {
@@ -352,6 +376,19 @@ section {
 
 #about-us h1 {
   margin-bottom: 30px;
+  color: #666;
+}
+
+#about-us h4 {
+  margin-top: 30px;
+  padding-top: 30px;
+  position: center;
+  color: #8736D1;
+  border-color: #666;
+  font-weight: bold;
+  text-shadow: 0px 2px 3px #fff;
+  /*text-shadow: 5px 5px 0px #fff, 7px 7px 0px #B892FF;*/
+  /*text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;*/
 }
 
 .progress{
@@ -598,6 +635,7 @@ section {
 #features {
   text-align: center;
   background-image: url(../assets/background3.jpg);
+  padding-bottom: 30px;
 }
 
 #features i {
@@ -626,17 +664,18 @@ section {
   padding-bottom: 0;
 }
 
-#google-map {
-  height: 350px;
+#contact {
+ /* background-color: #DBF4FF;*/
+  background-image: url(../assets/contact.jpg);
+  padding-bottom: 50px; 
 }
-
-#contact-us {
-  background-image:url(..assets/contact-bg.jpg);
-  padding-bottom: 90px; 
+#contact-us h5 {
+  font-size: 30px;
+  padding-bottom: 20px;
 }
 
 #contact-us .heading {
-  padding-top: 95px;
+  padding-top: 65px;
 }
 
 .form-control {
@@ -709,7 +748,7 @@ ul.address {
 }
 
 #footer .social-icons {
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 #footer .social-icons ul {
@@ -729,7 +768,7 @@ ul.address {
 }
 
 #footer .social-icons ul li a.envelope:hover {
-  background-color: #CECB26;
+  background-color: #ff002b;
 }
 
 #footer .social-icons ul li a.facebook:hover {
@@ -738,14 +777,7 @@ ul.address {
 #footer .social-icons ul li a.twitter:hover {
   background-color: #2ac6f7;
 }
-#footer .social-icons ul li a.dribbble:hover {
-  background-color: #ff5b92;
-}
-#footer .social-icons ul li a.linkedin:hover {
-  background-color: #036dc0;
-}
-#footer .social-icons ul li a.tumblr:hover {
-  background-color: #ff6b00;
+
 }
 
 /*Presets*/
