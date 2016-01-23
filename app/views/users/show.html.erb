@@ -1,0 +1,46 @@
+
+<div id="Profile"> 
+<div class="Profile-header">    
+  <h2> Profile Page </h2>
+</div>
+  <div class="Profile-info">  
+    <div class="Profile-line">  
+        <strong>First name:</strong>
+        <%= @user.first_name %>
+    </div>
+
+    <div class="Profile-line">  
+        <strong>Last name:</strong>
+        <%= @user.last_name %>
+    </div>
+
+    <div class="Profile-line">  
+        <strong>Email:</strong>
+        <%= @user.email %>
+    </div>
+
+    <div class="Profile-line">  
+        <strong>Occupation:</strong>
+        <%= @user.occupation %>
+    </div>
+
+    <div class="Profile-line">  
+        <strong>Location:</strong>
+        <%= @user.location %>
+    </div>
+
+    <div class="Profile-line">  
+        <strong>About:</strong>
+        <%= @user.about %>
+    </div>
+  </div>
+
+  <div class="Profile-links">  
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
+
+</div>
+  </div>
+
+
+

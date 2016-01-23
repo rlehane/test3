@@ -40,6 +40,7 @@ h4 {
  /* position: center;*/
 }
 
+
 h6 {
   font-size: 40px;
   color: #B892FF;
@@ -777,10 +778,12 @@ ul.address {
 }
 #footer .social-icons ul li a.twitter:hover {
   background-color: #2ac6f7;
-}
+
 
 }
 
 /*Presets*/
+}
+
 
 

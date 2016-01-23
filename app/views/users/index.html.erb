@@ -1,0 +1,51 @@
+
+<div id="Vol">
+
+  <h2>All Volunteers</h2>
+
+  <div class="Vol-content">
+  <table>
+    <thead>
+      <tr>
+        <th><h3>First name</h3></th>
+        <th><h3>Last name</h3></th>
+        <th><h3>Email</h3></th>
+        <th><h3>Occupation</h3></th>
+        <th><h3>Location</h3></th>
+        <th><h3>About</h3></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+        <h3></h3>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.occupation %></td>
+          <td><%= user.location %></td>
+          <td><%= user.about %></td>
+          
+          <div class="Vol-button">
+          <td><%= link_to 'Show', user %></td>
+          </div>
+          <div class="Vol-button">
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          </div>
+          <div class="Vol-button">
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </div>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+  </div>
+
+  <br>
+  <div class="Vol-footer">  
+   <%= link_to 'New User', new_user_path %>
+  </div>
+</div>

@@ -1,3 +1,85 @@
-// Place all the styles related to the users controller here.
+// Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 14px;
+  text-align: center;
+  background-image: url(../assets/login-background.jpeg);
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #8736D1;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #8736D1;
+}
+
+#user-info{
+  border-right:8px solid #FFFFFF;
+  border-bottom:8px solid #FFFFFF;
+  border-left:8px solid #FFFFFF;
+  border-top:8px solid #FFFFFF;
+  margin-right: 460px;
+  margin-left: 460px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.form-content{
+ 
+}
+
+
+#Profile{
+  border-right:8px solid #FFFFFF;
+  border-bottom:8px solid #FFFFFF;
+  border-left:8px solid #FFFFFF;
+  border-top:8px solid #FFFFFF;
+  margin-right: 460px;
+  margin-left: 460px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.Profile-header{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.Profile-line{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 22px;
+
+}
+
+.Profile-links{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+}
+
+#Vol{
+  
+}
+
+.Vol-button{
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.Vol-footer{
+  margin-top: 30px;
+}
+
