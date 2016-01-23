@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'volunteers', to: 'pages#volMenu', as: 'volunteers'
+  get 'charities', to: 'pages#charMenu', as: 'charities'
   get 'profile', to: 'users#show[user.id] ', as: 'profile'
   resources :users
   
