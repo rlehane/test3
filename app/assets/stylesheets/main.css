@@ -305,6 +305,7 @@ section {
 **************************/
 
 .service-icon {
+  /*background-color: #fff;*/
   border-radius: 4px;
   color: #fff;
   display: inline-block;
@@ -732,12 +733,12 @@ ul.address {
 
 .footer-top {
   position: relative;
-  padding:30px 0
+  padding:20px 0
 }
 
 #footer .footer-bottom {
   background-color: #DBF4FF;
-  padding: 20px 0 10px;
+  padding: 10px 0 10px;
 }
 
 #footer .footer-bottom a:hover {
@@ -750,7 +751,7 @@ ul.address {
 }
 
 #footer .social-icons {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 #footer .social-icons ul {
@@ -761,7 +762,7 @@ ul.address {
 
 #footer .social-icons ul li a {
   background-color: rgba(0,0,0,.2);
-  border-radius: 4px;
+  border-radius: 14px;
   line-height: 33px;
 }
 
@@ -781,6 +782,13 @@ ul.address {
 
 
 }
+
+/*************************
+**********Volunteer CSS*****
+**************************/
+
+
+
 
 /*Presets*/
 }

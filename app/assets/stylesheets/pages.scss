@@ -1,3 +1,36 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#volMenu{
+  margin-top: 10px;
+
+}
+
+#volMenu .volunteer-icon {
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-size: 36px;
+  height: 120px;
+  line-height: 120px;
+  width: 120px;  
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.our-volunteers .col-sm-6:hover .volunteer-icon {
+  background-color: #8736D1;
+}
+.our-volunteers .col-sm-6 .volunteer-icon {
+  background-color: #B892FF;
+}
+
+.our-volunteers .col-sm-6 {
+  border-right:5px dotted #f2f2f2;
+  border-bottom:5px dotted #f2f2f2;
+  border-left:5px dotted #f2f2f2;
+  border-top:5px dotted #f2f2f2;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
