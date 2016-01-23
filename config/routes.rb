@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'profile', to: 'users#show[user.id] ', as: 'profile'
   resources :users
   
-  get 'pages/login'
-  root 'pages#login'
+  get 'pages/landing'
+  root 'pages#landing'
+
+  get 'pages/volMenu'
+
   
   # get 'pages/login'
 

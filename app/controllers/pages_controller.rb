@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def landing
   end
-  def login
+  def volMenu
   end
 end
