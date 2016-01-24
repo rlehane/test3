@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+
+
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'volunteers', to: 'pages#volMenu', as: 'volunteers'
   get 'charities', to: 'pages#charMenu', as: 'charities'
+  get 'charForm', to: 'charity#form', as: 'charForm'
+  get 'register', to: 'charity#form', as: 'register'
   get 'profile', to: 'users#show[user.id] ', as: 'profile'
   resources :users
   
@@ -12,6 +16,8 @@ Rails.application.routes.draw do
   root 'pages#landing'
 
   get 'pages/volMenu'
+
+  get 'charity/form'
 
   
   # get 'pages/login'

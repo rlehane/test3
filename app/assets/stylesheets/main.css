@@ -305,7 +305,7 @@ section {
 **************************/
 
 .service-icon {
-  /*background-color: #fff;*/
+  background-color: #fff;
   border-radius: 4px;
   color: #fff;
   display: inline-block;
@@ -669,7 +669,7 @@ section {
 
 #contact {
  /* background-color: #DBF4FF;*/
-  background-image: url(../assets/contact.jpg);
+  background-image: (../assets/contact.jpg);
   padding-bottom: 50px; 
 }
 #contact-us h5 {
@@ -681,13 +681,13 @@ section {
   padding-top: 65px;
 }
 
-.form-control {
+/*.form-control {
   background-color: transparent;
   border-color: rgba(255,255,255,.1);
   height: 50px;
   border-radius: 0;
   box-shadow: none;
-}
+}*/
 
 textarea.form-control {
   min-height: 180px;

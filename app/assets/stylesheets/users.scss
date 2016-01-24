@@ -13,7 +13,8 @@ body {
 h2 {
   font-size: 40px;
   margin-bottom: 20px;
-  color: #8736D1;
+    color: #8736D1;
+
 }
 
 h3 {
@@ -33,10 +34,21 @@ h3 {
   margin-left: 460px;
   margin-top: 30px;
   margin-bottom: 30px;
+  background-color: rgba(255,255,255,0.3) 
 }
 
 .form-content{
  
+}
+
+.field input {
+    color: #282634;
+    font-size: 16px;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #B892FF;
+    border-radius: 4px;
+    background-color: transparent;
 }
 
 

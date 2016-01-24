@@ -1,0 +1,98 @@
+// Place all the styles related to the charity controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#charity {
+  padding-top: 15px;
+  padding-bottom: 7px;
+  margin-top: 40px;
+  margin-right: 400px;
+  margin-left: 400px;
+  border-right: 8px solid #FFFFFF;
+  border-bottom: 8px solid #FFFFFF;
+  border-left: 8px solid #FFFFFF;
+  border-top: 8px solid #FFFFFF;
+  text-align: left;
+  background-color: rgba(255,255,255,0.3) 
+}
+
+#charity-register h2 {
+  color: #8736D1;
+  margin-left: 90px;
+
+}
+
+.charity-content{
+  margin-left: 80px;
+  margin-bottom: 15px;
+
+	
+}
+
+#charity-register .heading {
+color: #B892FF;
+  margin-left: 60px;
+
+
+}
+
+.form-control {
+    color: #282634;
+    font-size: 16px;
+    width: 450px;
+    padding: 10px;
+    border: 2px solid #B892FF;
+    border-radius: 4px;
+    background-color: transparent;
+
+}
+
+textarea.form-control {
+  min-height: 180px;
+  resize:none;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+
+
+
+
+.charity-info {
+  padding-left:70px;
+  font-weight: 300;
+  background-colour: #B892FF;
+  border-right:5px dotted #f2f2f2;
+  border-bottom:5px dotted #f2f2f2;
+  border-left:5px dotted #f2f2f2;
+  border-top:5px dotted #f2f2f2;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+ul.address {
+  margin-top: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.charity-info ul li {
+  margin-bottom: 8px;
+}
+
+.charity-info ul li a {
+  color: #fff;
+}
+
+.btn-submit {
+  display: block;
+  padding: 12px;
+  width: 100%;
+  color: #fff;
+  border:0;
+  margin-top: 40px;
+}
+
