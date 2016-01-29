@@ -4,7 +4,7 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 15px;
   line-height: 24px;
-  align-content: center;
+  align-content: left;
 }
 
 p, ol, ul, td {
@@ -22,9 +22,7 @@ pre {
 a {
   color: #000;
 
-  &:visited {
-    color: #000000;
-  }
+
 
   &:hover {
     color: #fff;
@@ -60,7 +58,7 @@ div {
     text-align: center;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
-    font-size: 120px;
+    font-size: 20px;
     margin: -7px;
     margin-bottom: 0px;
     background-color: #c00;
@@ -70,6 +68,6 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
-    align-content: center;
+    align-content: left;
   }
 }

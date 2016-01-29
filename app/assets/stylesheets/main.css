@@ -733,7 +733,7 @@ ul.address {
 
 .footer-top {
   position: relative;
-  padding:20px 0
+  padding:30px 0
 }
 
 #footer .footer-bottom {
@@ -751,7 +751,7 @@ ul.address {
 }
 
 #footer .social-icons {
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 #footer .social-icons ul {
@@ -762,7 +762,7 @@ ul.address {
 
 #footer .social-icons ul li a {
   background-color: rgba(0,0,0,.2);
-  border-radius: 14px;
+  border-radius: 4px;
   line-height: 33px;
 }
 

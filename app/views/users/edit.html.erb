@@ -1,14 +1,14 @@
-
 <div id="user-info">
 
 <h2>Editing Volunteers</h2>
 
-
-	<div class="form-content">
-		<%= render 'form' %>
-
-		<%= link_to 'Profile', @user %> |
-		<%= link_to 'Back', users_path %>
+	<div class="form-full">
+		<div class="form-content">			
+			<%= render 'form' %>
+		</div>
+			<%= link_to 'Profile', @user, :class => 'btn btn-primary' %> 
+			<%= link_to 'Back', users_path, :class => 'btn btn-primary' %>
+		
 	</div>
 </div>
 

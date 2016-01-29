@@ -1,9 +1,13 @@
 
 <div id="Profile"> 
+
+
+
 <div class="Profile-header">    
   <h2> Profile Page </h2>
 </div>
   <div class="Profile-info">  
+  <%= image_tag @user.avatar.url(:medium) %>
     <div class="Profile-line">  
         <strong>First name:</strong>
         <%= @user.first_name %>
@@ -36,8 +40,8 @@
   </div>
 
   <div class="Profile-links">  
-    <%= link_to 'Edit', edit_user_path(@user) %> |
-    <%= link_to 'Back', users_path %>
+    <%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-primary' %> 
+    <%= link_to 'Back', users_path,  :class => 'btn btn-primary' %>
 
 </div>
   </div>
