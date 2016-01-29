@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.10'
 # gem 'unicorn'
 gem 'cocaine', '~> 0.5.8'
 
-
+# gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
 # Use Capistrano for deployment

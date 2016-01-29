@@ -21,6 +21,7 @@
       <% @users.each do |user| %>
         <tr>
         <h3></h3>
+          <td><%= image_tag user.avatar.url %></td>
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
           <td><%= user.email %></td>
@@ -33,10 +34,10 @@
           <td><%= link_to 'Show', user, :class => 'btn btn-primary'%></td>
           </div>
           <div class="Vol-button">
-          <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-primary' %></td>
+          <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-warning' %></td>
           </div>
           <div class="Vol-button">
-          <td><%= link_to 'Destroy', user, :class => 'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', user, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </div>
         </tr>
       <% end %>
