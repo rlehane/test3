@@ -1,0 +1,162 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 14px;
+  text-align: center;
+  background-image: url(../assets/login-background.jpeg);
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+    color: #8736D1;
+
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #8736D1;
+}
+
+#user-info{
+  border-right:8px solid #FFFFFF;
+  border-bottom:8px solid #FFFFFF;
+  border-left:8px solid #FFFFFF;
+  border-top:8px solid #FFFFFF;
+  margin-right: 460px;
+  margin-left: 460px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: rgba(255,255,255,0.3) 
+}
+
+.form-content{
+ 
+}
+
+.field input {
+    color: #282634;
+    font-size: 16px;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #B892FF;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+
+.form-content{
+  margin-bottom: 35px;
+
+}
+.form-full{
+  margin-bottom: 20px;
+}
+
+.Profile-info{
+  margin-bottom: 35px;
+}
+
+
+.Profile{
+  margin-bottom: 20px;
+}
+
+#Profile{
+  border-right:8px solid #FFFFFF;
+  border-bottom:8px solid #FFFFFF;
+  border-left:8px solid #FFFFFF;
+  border-top:8px solid #FFFFFF;
+  margin-right: 460px;
+  margin-left: 460px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  background-color: rgba(255,255,255,0.3) 
+}
+
+.Profile-header{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.Profile-line{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 22px;
+
+}
+
+.Profile-links{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+}
+
+
+.btn-primary{
+  border-radius: 6px;
+    padding: 10px 16px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-info{
+    border-radius: 6px;
+    padding: 10px 16px;
+    border: 3;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #8CFFD8;
+}
+
+.btn-warning{
+    border-radius: 6px;
+    padding: 10px 16px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.btn-danger{
+    border-radius: 6px;
+    padding: 10px 16px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+#Vol{
+  
+}
+
+.Vol-button{
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.Vol-footer{
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+.Vol-button{
+  margin-bottom: 20px;
+}
+

@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
     User.where(id: session[:user_id]).first
   end
   helper_method :current_user
+
+
+  private
+  def current_charity
+    Charity.where(id: session[:charity_id]).first
+  end
+  helper_method :current_charity
+
 end

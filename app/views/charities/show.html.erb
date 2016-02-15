@@ -1,0 +1,47 @@
+<div id="Profile"> 
+
+
+
+<div class="Profile-header">    
+  <h2> Profile Page </h2>
+</div>
+ <div class="Profile-info">  
+
+
+    <div class="Profile-line">  
+      <strong>Charity name:</strong>
+      <%= @charity.charity_name %>
+    </div>
+
+    <div class="Profile-line">  
+      <strong>Applicant name:</strong>
+      <%= @charity.applicant_name %>
+    </div>
+
+    <div class="Profile-line">  
+      <strong>About:</strong>
+      <%= @charity.about %>
+    </div>
+
+    <div class="Profile-line">  
+      <strong>Phone:</strong>
+      <%= @charity.phone %>
+    </div>
+
+    <div class="Profile-line">  
+      <strong>Email:</strong>
+      <%= @charity.email %>
+    </div>
+
+    <div class="Profile-line">  
+      <strong>Tax number:</strong>
+      <%= @charity.tax_number %>
+    </div>
+
+  <div class="Profile-links">  
+    <%= link_to 'Back', charities_path,  :class => 'btn btn-info' %>
+    <%= link_to 'Edit', edit_charity_path(@charity), :class => 'btn btn-primary' %> 
+
+
+</div>
+  </div>

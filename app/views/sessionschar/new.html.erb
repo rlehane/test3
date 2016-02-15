@@ -1,0 +1,32 @@
+<div id="login-page">
+
+ <div class="login-content">
+	<h2>Log In</h2>
+	<%= form_tag sessions_path do %>
+	
+	<div class="login-fields">
+		<div class="field">
+		<%= label_tag :email %><br>
+		<%= text_field_tag :email %>
+		</div>
+		<div class="field">
+		<%= label_tag :password %><br>
+		<%= password_field_tag :password %>
+		</div>
+	</div>
+
+	  <div class="btn-actions">
+	    <%= submit_tag "Log In", :class => 'btn btn-primary' %> 
+	</div>
+	<!--  <button  value=" Send" class="btn btn-info" type="submit" id="submit"> -->
+	<!--     <span class="label label-info">Info</span> -->
+	<center>
+	 <%= link_to 'Back', volunteers_path, :class => 'btn btn-info' %>
+	 </center>
+</div>
+</div>
+<% end %>
+
+<!-- <div class="form-group">
+                  <button type="submit" class="btn-submit">Send Now</button>
+                </div> -->
