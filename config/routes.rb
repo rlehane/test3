@@ -4,20 +4,24 @@ Rails.application.routes.draw do
 
   resources :charities
 
-  root 'charities#index'
+  # root 'charities#index'
 
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
+  get 'vols_menu', to: 'users#menu', as: 'vols_menu'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'volunteers', to: 'pages#volMenu', as: 'volunteers'
-  # get 'charities', to: 'pages#charMenu', as: 'charities'
+  get 'charities_menu', to: 'pages#charMenu', as: 'charities_menu'
   # get 'about', to: 'pages/landing#about-us', as: 'about' 
   get 'charForm', to: 'charity#form', as: 'charForm'
   get 'register', to: 'charity#form', as: 'register'
   # get 'profile', to: 'users#show.current_user', as: 'profile'
   resources :users
-   # root 'pages#landing'
+  
+  root 'pages#landing'
+
+  get 'tags/:tag', to: 'users#menu', as: :tag
 
   get 'pages/volMenu'
 

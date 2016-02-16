@@ -1,0 +1,47 @@
+
+<div id="Vol-menu">
+
+  <h2>Search Volunteers</h2>
+
+  <div class="vol-header">
+      <div id="tag_cloud">
+      <% tag_cloud User.tag_counts, %w[s m l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+      <% end %>
+      </div>
+  </div>
+ <% @users.each do |user| %>
+
+ <div class="col-sm-4">
+    <div class="vol-profile"> 
+
+  <%= image_tag user.avatar.url %>
+
+      <div class="vol-line">  
+        <strong>First name:</strong>
+        <%= user.first_name %>
+      </div>
+
+      <div class="vol-line">  
+        <strong>Occupation:</strong>
+        <%= user.occupation %>
+      </div>
+
+      <div class="vol-line">  
+        <strong>Location:</strong>
+        <%= user.location %>
+      </div>
+
+      <div class="vol-line">  
+      <strong>Skills:</strong>
+          <%= raw user.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+      </div>
+
+  </div>
+  </div>
+    <% end %>
+
+       <%= link_to 'List of Volunteers', users_path, :class => 'btn btn-primary' %>
+</div>
+
+

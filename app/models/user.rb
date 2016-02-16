@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
  
+  acts_as_taggable
   has_secure_password
   validates :first_name,
             presence: true
@@ -10,7 +11,9 @@ class User < ActiveRecord::Base
   validates :location,
             presence: true
   validates :about,
-            presence: true                    
+            presence: true
+  validates :tag_list,
+            presence: true                     
   validates :email,
             presence: true,
             uniqueness: true,

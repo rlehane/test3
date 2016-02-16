@@ -7,7 +7,7 @@ body {
   font-size: 16px;
   line-height: 14px;
   text-align: center;
-  background-image: url(../assets/login-background.jpeg);
+  background-image: url(../assets/wood-background.jpg);
 }
 
 h2 {
@@ -158,5 +158,48 @@ h3 {
 
 .Vol-button{
   margin-bottom: 20px;
+}
+
+
+
+
+
+#Vol-menu{
+  text-align: center;
+}
+
+
+.vol-header{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.vol-profile{
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 22px;
+
+}
+
+.vol-line{
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+
+
+.Vol-button{
+  margin-left: 20px;
+  margin-right: 20px;
+
 }
 

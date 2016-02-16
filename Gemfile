@@ -33,6 +33,8 @@ gem 'cocaine', '~> 0.5.8'
 # gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
+gem 'acts-as-taggable-on', '~> 3.5'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -2,9 +2,21 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
-  def index
+  def menu
+    @users = User.all
+
+  if params[:tag]
+    @users = User.tagged_with(params[:tag])
+  else
     @users = User.all
   end
+
+  end
+
+def index
+    @users = User.all
+  end
+
 
   # GET /users/1
   def show
@@ -53,7 +65,7 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :hobbies, :occupation, :location, :about, :email, :password, :password_confirmation, :avatar)
+      params.require(:user).permit(:first_name, :last_name, :hobbies, :occupation, :location, :about, :tag_list, :email, :password, :password_confirmation, :avatar)
     end
 
 
