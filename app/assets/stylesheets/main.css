@@ -141,9 +141,9 @@ section {
 
 
 .navbar-right li a {
-  color: #fff;
+  color: black;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -152,7 +152,7 @@ section {
 .navbar-left li a {
   color: #8CFFD8;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 1px;
   font-weight: 600;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -189,6 +189,9 @@ section {
   display: inline-block;
   margin-bottom: 5px;
 }
+
+
+
 
 /*#footer .social-icons {
   margin-top: 15px;

@@ -7,8 +7,8 @@
   <h2> My Profile </h2>
 </div>
   <div class="Profile-info">  
-  <%= image_tag @user.avatar.url %>
-    <div class="Profile-line">  
+  <%= image_tag @user.avatar.url, :class => 'img-circle' %>
+      <div class="Profile-line">  
         <strong>First name:</strong>
         <%= @user.first_name %>
     </div>

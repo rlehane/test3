@@ -7,7 +7,7 @@ body {
   font-size: 16px;
   line-height: 14px;
   text-align: center;
-  background-image: url(../assets/wood-background.jpg);
+  background-color: #B892FF;
 }
 
 h2 {
@@ -77,9 +77,9 @@ h3 {
   margin-right: 460px;
   margin-left: 460px;
   margin-top: 80px;
-  margin-bottom: 80px;
   background-color: rgba(255,255,255,0.3) 
 }
+
 
 .Profile-header{
   margin-top: 30px;
@@ -107,6 +107,7 @@ h3 {
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
+    background-color: #B892FF;
 }
 
 .btn-info{
@@ -179,12 +180,19 @@ h3 {
   margin-top: 40px;
   margin-bottom: 20px;
   font-size: 22px;
+    border-left:6px solid #FFFFFF;
+    border-bottom:6px solid #FFFFFF;
+    border-right:6px solid #FFFFFF;
+    border-top:6px solid #FFFFFF;
+    background-color: rgba(255,255,255,0.3) 
 
 }
 
 .vol-line{
   margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 22px;
+  color: black;
 }
 
 

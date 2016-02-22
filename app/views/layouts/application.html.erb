@@ -44,11 +44,9 @@
               <%= link_to "About Us", root_path %>
            </li>
            <li class="scroll">
-              <%= link_to "Our Users", root_path %>
+              <%= link_to "Volunteers", vols_menu_path %>
            </li>
-           <li class="scroll">
-              <%= link_to "Contact", root_path %>
-           </li>
+
              <li class="scroll">
              <% if current_user %>
               You are logged in as <%= current_user.first_name %>.
@@ -58,11 +56,19 @@
               <%= link_to "Log Out", logout_path %>
               </li>
               <% else %>
-              <%= link_to "Sign Up", signup_path %> 
+<!--               <%= link_to "Sign Up", signup_path %> 
               </li>
              <li class="scroll">
               <%= link_to "Log In", login_path %>
-              <% end %>
+              </li> -->
+          <% end %>
+
+            <li><a class="envelope" href="https://ie.linkedin.com/in/ruth-lehane-53b910a6/"><i class="fa fa-envelope fa-1x"></i></a></li>
+            <li><a class="twitter" href="https://twitter.com/_nobo_?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa fa-twitter fa-1x"></i></a></li> 
+            <li><a class="facebook" href="https://www.facebook.com/profile.php?id=100011469422522"><i class="fa fa-facebook fa-1x"></i></a></li>
+            <li><a class="instargram" href="https://www.instagram.com/_nobo_/"><i class="fa fa-instagram fa-1x"></i></a></li>
+
+             
               </div>
               <% flash.each do |key, value| %>
               <%= content_tag(:div, class: "alert alert-#{key}") do %>
@@ -81,9 +87,9 @@
 
 
 
-  <footer id="footer">
+ <!--  <footer id="footer">
     <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-
+ -->
 <!--         <div class="footer-logo">
          <%= image_tag("logo.png", :class => "img-responsive", :alt => "rss feed") %>
        </div>  -->
@@ -95,7 +101,7 @@
           </ul>
         </div> -->
 <!--       </div> -->
-      <div class="container">
+ <!--      <div class="container">
         <div class="row">
           <div class="col-sm-4">
             <p>&copy; 2015 Trinity College Dublin</p>
@@ -105,7 +111,7 @@
           </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
 
 </body>
 </html>

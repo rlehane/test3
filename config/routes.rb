@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'dash/index'
+
   resources :charities
 
   # root 'charities#index'
