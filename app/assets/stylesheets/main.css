@@ -149,10 +149,18 @@ section {
   padding-bottom: 30px;
 }
 
+/*.navbar-right:hover  li a.envelope {
+  background-color: #3b5999;
+}*/
+
+
+
+
+
 .navbar-left li a {
   color: #8CFFD8;
   text-transform: uppercase;
-  font-size: 1px;
+  font-size: 18px;
   font-weight: 600;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -165,6 +173,9 @@ section {
 .navbar-brand h1 {
   margin-top: 5px;
 }
+
+
+
 
 
 #footer {

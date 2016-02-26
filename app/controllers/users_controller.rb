@@ -70,5 +70,18 @@ def index
 
 
 
+# Membership: user_id, charity_id, role
+
+# Users -> sessiony stuff
+# |-> have_many memberships
+
+# Charities -> content creation
+# |-> have_many memberships
+
+#  enum Role {
+#   :volunteer,
+#   :adminstrator
+
+
 
 end

@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to current_user, notice: 'Log in successful!'
-      # redirect_to users/user.id_url, notice: 'Logged in!'
     else
       render :new
     end
+
   # def create
   #    charity = Charity.find_by_email(params[:email])
   #   if charity && charity.authenticate(params[:password])
@@ -28,4 +28,6 @@ class SessionsController < ApplicationController
 
 
 end
+
+
 

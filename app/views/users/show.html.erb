@@ -37,6 +37,10 @@
         <strong>About:</strong>
         <%= @user.about %>
     </div>
+    <div class="Profile-line">  
+        <strong>Skills:</strong>
+          <%= @user.tag_list.join(', ') %>
+    </div>
   </div>
 
   <div class="Profile-links">  
