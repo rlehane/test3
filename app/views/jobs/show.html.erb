@@ -45,9 +45,15 @@
                 <td><strong>Number of volunteers required</strong></td>
                 <td><%= @job.no_vols %></td>
               </tr>
+              <tr>
+                <td><strong>Last updated</strong></td>
+                <td><%= @job.updated_at %></td>
+              </tr>
             </tbody>
           </table>
-
+          <center>
+            <%= link_to 'Edit', edit_job_path(@job), class: "btn btn-info" %>
+          </center>
       </div>
     </div>
 
@@ -71,7 +77,6 @@
                     <td><strong>Comment:</strong></td>
                     <td><%= note.comment %></td>
                   </tr>
-
                 </tbody>
               </table>
               </div>
@@ -85,6 +90,7 @@
             <br>
             <br>
              <%= link_to 'Back', jobs_path, class: "btn btn-info" %>
+
           </div>
 
 

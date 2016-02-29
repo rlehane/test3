@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 
   resources :jobs do
+    collection do
+        get 'search'
+      end
       resources :notes, except: [:show, :index]
   end
 

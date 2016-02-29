@@ -35,6 +35,8 @@ gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
 gem 'acts-as-taggable-on', '~> 3.5'
 
+gem 'searchkick', '~> 1.2', '>= 1.2.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

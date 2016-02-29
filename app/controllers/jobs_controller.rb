@@ -2,6 +2,15 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   # before_action :authenticate_user!, except: [:index, :show]
   # GET /jobs
+ 
+  def search
+    if params[:search].present?
+      @jobs = Job.search(params[:search])
+    else
+      @jobs = Job.all
+    end
+  end
+
   def index
     @jobs = Job.all
   end
@@ -54,6 +63,6 @@ class JobsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_params
-      params.require(:job).permit(:title, :charity, :description, :date, :time, :no_vols, :location, :imageAF)
+      params.require(:job).permit(:title, :charity, :description, :date, :time, :no_vols, :location, :image)
     end
 end
