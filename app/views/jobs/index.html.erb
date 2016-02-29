@@ -1,0 +1,36 @@
+
+<div class = "container">
+ 
+ <% if current_user %>
+   <div class="row">
+    <% @jobs.each do |job| %>
+      <div class="col-sm-6 col-md-3">
+
+        <div class="thumbnail">
+          <h2> <%= job.title %> </h2>
+          <%= link_to (image_tag job.image.url, class: 'image'), job %>
+          <br>
+          <p> <strong> Charity: </strong> <%= job.charity%> </p>
+          <p> <strong> Location: </strong> <%= job.location%> </p>
+          <p> <strong> Date: </strong> <%= job.date%> </p>
+
+        </div>
+      </div>
+    <% end %>
+   </div>
+    
+    <%= link_to 'New Job', new_job_path, :class => 'btn btn-primary' %>
+  
+  <%else%>
+    <div class="jumbotron">
+    <br>
+      <h1>The Noticeboard: Volunteering Opportunities</h1>
+      <p>We have a collection of charity events that charities are excited for you to sign up to!</p>
+      <br>
+       <p>Simply Sign Up or Login To View Current Volunteer Jobs on the Noticeboard</p>
+       <br>
+      <p><%= link_to "Sign Up or Login", volunteers_path, class: "btn btn-primary btn " %></p>
+    </div>
+  <% end %>
+</div>
+

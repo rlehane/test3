@@ -1,0 +1,98 @@
+<div id="job">
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+    <center>
+     <h2> <%= @job.title %> </h2>
+    </center>
+      <div class="col-md-6">
+      <center>
+        <%= image_tag @job.image.url, :class => 'img-thumbnail' %>
+      </center>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Title:</strong></td>
+                <td><%= @job.title %></td>
+              </tr>
+              <tr>
+                <td><strong>Charity:</strong></td>
+                <td><%= @job.charity %></td>
+              </tr>
+              <tr>
+                <td><strong>Description:</strong></td>
+                <td><%= @job.description %></td>
+              </tr>
+              <tr>
+                <td><strong>Job date:</strong></td>
+                <td><%= @job.date %></td>
+              </tr>
+              <tr>
+                <td><strong>Job Time:</strong></td>
+                <td><%= @job.time %></td>
+              </tr>
+              <tr>
+                <td><strong>Job Location:</strong></td>
+                <td><%= @job.location %></td>
+              </tr>
+              <tr>
+                <td><strong>Job created at:</strong></td>
+                <td><%= @job.created_at %></td>
+              </tr>
+              <tr>
+                <td><strong>Number of volunteers required</strong></td>
+                <td><%= @job.no_vols %></td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+    </div>
+
+        <div class= "comments">
+          <h1>Comments </h1>
+          <% if @notes.blank? %>
+            <h5> No comments yet, would you like to add the first? </h5>
+
+          <%else%>
+          <% @notes.each do |note| %>
+            <div class="table-responsive">
+              <table class="table">
+               <tbody>
+
+                  <tr>
+                    <td><strong>Commenter:</strong></td>
+                    <td><%= link_to note.user.email, '#' %></td>
+                  </tr>
+                  <br>
+                  <tr>
+                    <td><strong>Comment:</strong></td>
+                    <td><%= note.comment %></td>
+                  </tr>
+
+                </tbody>
+              </table>
+              </div>
+                <%end%>
+                <%end%>
+
+            <br>
+             <%= link_to "Write Comment", new_job_note_path(@job), class: "btn btn-primary" %>    
+
+            <br>
+            <br>
+            <br>
+             <%= link_to 'Back', jobs_path, class: "btn btn-info" %>
+          </div>
+
+
+
+
+</div>
+
+</div>
+</div>
+</div>
+

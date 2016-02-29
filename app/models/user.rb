@@ -1,7 +1,13 @@
 class User < ActiveRecord::Base
  
+
+  has_many :jobs
+  has_many :notes, dependent: :destroy
+
   acts_as_taggable
   has_secure_password
+
+  has_many :jobs, dependent: :destroy
   validates :first_name,
             presence: true
   validates :last_name,

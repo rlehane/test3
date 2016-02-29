@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  resources :jobs do
+      resources :notes, except: [:show, :index]
+  end
 
   get 'dash/index'
 
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
+  get 'user_show', to: 'users#show', as: 'user_show'
   get 'vols_menu', to: 'users#menu', as: 'vols_menu'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
@@ -18,6 +22,7 @@ Rails.application.routes.draw do
   # get 'about', to: 'pages/landing#about-us', as: 'about' 
   get 'charForm', to: 'charity#form', as: 'charForm'
   get 'register', to: 'charity#form', as: 'register'
+  get 'noticeboard', to: 'jobs#index', as: 'noticeboard'
   # get 'profile', to: 'users#show.current_user', as: 'profile'
   resources :users
   

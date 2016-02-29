@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  charity: MyString
+  description: MyText
+  date: 2016-02-27
+  time: 2016-02-27 12:50:49
+  no_vols: 
+  location: MyString
+
+two:
+  title: MyString
+  charity: MyString
+  description: MyText
+  date: 2016-02-27
+  time: 2016-02-27 12:50:49
+  no_vols: 
+  location: MyString

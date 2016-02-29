@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215203158) do
+ActiveRecord::Schema.define(version: 20160229165234) do
 
   create_table "charities", force: :cascade do |t|
     t.string   "charity_name"
@@ -23,6 +23,31 @@ ActiveRecord::Schema.define(version: 20160215203158) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "charity"
+    t.text     "description"
+    t.date     "date"
+    t.time     "time"
+    t.integer  "no_vols"
+    t.string   "location"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "job_id"
   end
 
   create_table "taggings", force: :cascade do |t|
