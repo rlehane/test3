@@ -11,7 +11,6 @@
 <div id="user_header">
 
    <div class="main-nav">
-      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -20,7 +19,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#home">
-            <%= image_tag("logo.png", :class => "img-responsive", :alt => "rss feed") %>
+            <%= image_tag("logo.png", :class => "img-responsive") %>
           </a>                    
         </div>
         <div class="collapse navbar-collapse">
@@ -32,9 +31,7 @@
            <li class="scroll">
               <%= link_to "Volunteers", volunteers_path %>
            </li>
-
           </ul>
-
 
           <ul class="nav navbar-nav navbar-right">                 
             <li class="scroll active">
@@ -52,7 +49,7 @@
 
              <li class="scroll">
              <% if current_user %>
-              You are logged in as <%= current_user.first_name %>.
+              You are logged in as <%= current_user.first_name %>
               <%= link_to "My Profile", current_user %>
               </li>
               <li class="scroll">

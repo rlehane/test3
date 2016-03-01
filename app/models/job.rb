@@ -1,8 +1,11 @@
 class Job < ActiveRecord::Base
 
+acts_as_votable
+
 searchkick
 
 belongs_to :user
+belongs_to :category
 has_many :notes
 
   validates :title,

@@ -15,6 +15,10 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+ <div class="field">
+     <%= f.label :category %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div> 
   <div class="field">
     <%= f.label :charity %><br>
     <%= f.text_field :charity %>
@@ -32,7 +36,7 @@
     <%= f.time_select :time %>
   </div>
   <div class="field">
-    <%= f.label :no_vols %><br>
+    <%= f.label :number_of_volunteers %><br>
     <%= f.text_field :no_vols %>
   </div>
   <div class="field">
@@ -46,6 +50,6 @@
 
 
   <div class="actions">
-    <%= f.submit %>
+     <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

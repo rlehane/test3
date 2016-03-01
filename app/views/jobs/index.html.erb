@@ -2,33 +2,49 @@
 <div class = "container">
  
  <% if current_user %>
-  <div class = "search_bar">
-         <%= form_tag search_jobs_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
-            <p>
-            <%= text_field_tag :search, params[:search], class: "form-control", :placeholder => 'Search...' %>
-            <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-            </p>
-            <%end%>
+
+    <div class = "cats">
+      <ul class="nav nav-pills">
+          <li role="presentation">
+            <%= link_to "All Jobs", noticeboard_path, :class => 'btn btn-info' %>
+          </li>
+            <% Category.all.each do |category|%>
+          <li role="presentation">
+            <%= link_to category.name, jobs_path(category: category.name) %>
+          </li>
+          <% end %>            
+          <% yield %>
+      </ul>
     </div>
 
-    <div class = "content">
-   <div class="row">
-    <% @jobs.each do |job| %>
-      <div class="col-sm-6 col-md-3">
 
-        <div class="thumbnail">
-          <h2> <%= job.title %> </h2>
-          <%= link_to (image_tag job.image.url, class: 'image'), job %>
-          <br>
-          <p> <strong> Charity: </strong> <%= job.charity%> </p>
-          <p> <strong> Location: </strong> <%= job.location%> </p>
-          <p> <strong> Date: </strong> <%= job.date%> </p>
-
-
-        </div>
+    <div class = "search_bar">
+           <%= form_tag search_jobs_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
+              <p>
+              <%= text_field_tag :search, params[:search], class: "form-control", :placeholder => 'Search...' %>
+              <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+              </p>
+              <%end%>
       </div>
-    <% end %>
-   </div>
+
+      <div class = "content">
+     <div class="row">
+      <% @jobs.each do |job| %>
+        <div class="col-sm-6 col-md-3">
+
+          <div class="thumbnail">
+            <h2> <%= job.title %> </h2>
+            <%= link_to (image_tag job.image.url, class: 'image'), job %>
+            <br>
+            <p> <strong> Charity: </strong> <%= job.charity%> </p>
+            <p> <strong> Location: </strong> <%= job.location%> </p>
+            <p> <strong> Date: </strong> <%= job.date%> </p>
+
+
+          </div>
+        </div>
+      <% end %>
+     </div>
     
     <%= link_to 'New Job', new_job_path, :class => 'btn btn-primary' %>
   

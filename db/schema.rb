@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229165234) do
+ActiveRecord::Schema.define(version: 20160301034857) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "charities", force: :cascade do |t|
     t.string   "charity_name"
@@ -33,14 +39,30 @@ ActiveRecord::Schema.define(version: 20160229165234) do
     t.time     "time"
     t.integer  "no_vols"
     t.string   "location"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.integer  "category_id"
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
   end
+
+  add_index "jobs", ["cached_votes_down"], name: "index_jobs_on_cached_votes_down"
+  add_index "jobs", ["cached_votes_score"], name: "index_jobs_on_cached_votes_score"
+  add_index "jobs", ["cached_votes_total"], name: "index_jobs_on_cached_votes_total"
+  add_index "jobs", ["cached_votes_up"], name: "index_jobs_on_cached_votes_up"
+  add_index "jobs", ["cached_weighted_average"], name: "index_jobs_on_cached_weighted_average"
+  add_index "jobs", ["cached_weighted_score"], name: "index_jobs_on_cached_weighted_score"
+  add_index "jobs", ["cached_weighted_total"], name: "index_jobs_on_cached_weighted_total"
 
   create_table "notes", force: :cascade do |t|
     t.text     "comment"
@@ -85,5 +107,20 @@ ActiveRecord::Schema.define(version: 20160229165234) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.integer  "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
 
 end

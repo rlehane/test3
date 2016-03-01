@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   # before_action :authenticate_user!, except: [:index, :show]
   # GET /jobs
  
@@ -13,6 +13,13 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.all
+
+    if params[:category].blank?
+      @jobs = Job.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @jobs = Job.where(category_id: @category_id).order("created_at DESC")
+    end
   end
 
   # GET /jobs/1
@@ -55,6 +62,17 @@ class JobsController < ApplicationController
     redirect_to jobs_url, notice: 'Job was successfully destroyed.'
   end
 
+  #for joining events
+  def upvote
+    @job.upvote_from current_user
+    redirect_to @job, notice: 'Thanks for volunteering'
+  end
+
+  def downvote
+    @job.downvote_from current_user
+    redirect_to @job
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job
@@ -63,6 +81,6 @@ class JobsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_params
-      params.require(:job).permit(:title, :charity, :description, :date, :time, :no_vols, :location, :image)
+      params.require(:job).permit(:title, :charity, :description, :date, :time, :no_vols, :location, :image, :category_id)
     end
 end

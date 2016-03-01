@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     collection do
         get 'search'
       end
+    member do
+      put "join" => "jobs#upvote"
+      put "undo" => "jobs#downvote"
+    end
       resources :notes, except: [:show, :index]
   end
 
@@ -26,6 +30,7 @@ Rails.application.routes.draw do
   get 'charForm', to: 'charity#form', as: 'charForm'
   get 'register', to: 'charity#form', as: 'register'
   get 'noticeboard', to: 'jobs#index', as: 'noticeboard'
+  get 'notice', to: 'jobs#show', as: 'notice'
   # get 'profile', to: 'users#show.current_user', as: 'profile'
   resources :users
   

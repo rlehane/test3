@@ -1,6 +1,8 @@
+<div id= "editing_jobs">
 <h1>Editing Job</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Show', @job, :class => 'btn btn-primary'  %> 
+<%= link_to 'Back', jobs_path, :class => 'btn btn-info' %>
+</div>

@@ -37,6 +37,8 @@ gem 'acts-as-taggable-on', '~> 3.5'
 
 gem 'searchkick', '~> 1.2', '>= 1.2.1'
 
+gem 'acts_as_votable', '~> 0.10.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

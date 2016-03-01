@@ -3,9 +3,11 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
+                 <%= link_to 'Back', jobs_path, class: "btn btn-info" %>
     <center>
      <h2> <%= @job.title %> </h2>
     </center>
+    <br>
       <div class="col-md-6">
       <center>
         <%= image_tag @job.image.url, :class => 'img-thumbnail' %>
@@ -57,6 +59,26 @@
       </div>
     </div>
 
+
+            <% if @job.get_upvotes.size == @job.no_vols %>
+            <p> We have enough volunteers for this event! Please volunteer at another event if you can.</p>
+            <% else %>
+           <p> Please join, We need more volunteers for this event!</p>
+             <p> We have <%= @job.get_upvotes.size %> volunteers but we need <%= @job.no_vols %> </p>
+             <br>
+
+            <div class="jobs">
+            <%= link_to join_job_path(@job), class: "btn btn-primary btn-sm", method: :put do %>   
+            <span class = "glyphicon glyphicon-plus-sign" aria-label="Join"></span> JOIN
+            <span class = "badge"> <%= @job.get_upvotes.size %> </span>
+             <% end %>
+            <%= link_to undo_job_path(@job), class: "btn btn-default btn-sm", method: :put do %>   
+            <span class = "glyphicon glyphicon-minus-sign" aria-label="Undo"></span> Undo
+            <% end %>
+           <% end %>
+
+            </div>
+
         <div class= "comments">
           <h1>Comments </h1>
           <% if @notes.blank? %>
@@ -84,16 +106,19 @@
                 <%end%>
 
             <br>
-             <%= link_to "Write Comment", new_job_note_path(@job), class: "btn btn-primary" %>    
+             <%= link_to "Write Comment", new_job_note_path(@job), class: "btn btn-primary" %>   
+            <br>
+            <br>
 
             <br>
             <br>
-            <br>
-             <%= link_to 'Back', jobs_path, class: "btn btn-info" %>
+
 
           </div>
-
-
+            <center>
+              <h1> Signed up volunteers </h1>
+              <% @job.votes_for.voters.each do |p| %> <%= p.email %> <% end %>
+            </center>
 
 
 </div>
