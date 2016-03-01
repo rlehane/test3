@@ -39,6 +39,8 @@ gem 'searchkick', '~> 1.2', '>= 1.2.1'
 
 gem 'acts_as_votable', '~> 0.10.0'
 
+gem 'masonry-rails', '~> 0.2.4'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

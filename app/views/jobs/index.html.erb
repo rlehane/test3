@@ -27,13 +27,14 @@
               <%end%>
       </div>
 
+    <div class = "jobs">
       <div class = "content">
      <div class="row">
       <% @jobs.each do |job| %>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-8 col-md-4">
 
           <div class="thumbnail">
-            <h2> <%= job.title %> </h2>
+            <h4> <%= job.title %> </h4>
             <%= link_to (image_tag job.image.url, class: 'image'), job %>
             <br>
             <p> <strong> Charity: </strong> <%= job.charity%> </p>
@@ -59,6 +60,7 @@
       <p><%= link_to "Sign Up or Login", volunteers_path, class: "btn btn-primary btn " %></p>
     </div>
   <% end %>
+</div>
 </div>
 
 </div>

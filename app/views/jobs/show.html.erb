@@ -3,7 +3,7 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
-                 <%= link_to 'Back', jobs_path, class: "btn btn-info" %>
+     <%= link_to 'Back', jobs_path, class: "btn btn-info" %>
     <center>
      <h2> <%= @job.title %> </h2>
     </center>
@@ -79,6 +79,7 @@
 
             </div>
 
+
         <div class= "comments">
           <h1>Comments </h1>
           <% if @notes.blank? %>
@@ -109,10 +110,6 @@
              <%= link_to "Write Comment", new_job_note_path(@job), class: "btn btn-primary" %>   
             <br>
             <br>
-
-            <br>
-            <br>
-
 
           </div>
             <center>
