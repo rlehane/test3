@@ -24,6 +24,10 @@
                 <td><%= @job.charity %></td>
               </tr>
               <tr>
+                <td><strong>Creator:</strong></td>
+                <td><%= @job.user_id %></td>
+              </tr>
+              <tr>
                 <td><strong>Description:</strong></td>
                 <td><%= @job.description %></td>
               </tr>
@@ -41,7 +45,7 @@
               </tr>
               <tr>
                 <td><strong>Job created at:</strong></td>
-                <td><%= @job.created_at %></td>
+                <td><%= @job.created_at.strftime("%d %b. %y")%></td>
               </tr>
               <tr>
                 <td><strong>Number of volunteers required</strong></td>
@@ -49,12 +53,16 @@
               </tr>
               <tr>
                 <td><strong>Last updated</strong></td>
-                <td><%= @job.updated_at %></td>
+                <td><%= @job.updated_at.strftime("%d %b. %y") %></td>
               </tr>
             </tbody>
           </table>
           <center>
+
+          <% if current_user.id == @job.user_id %>
             <%= link_to 'Edit', edit_job_path(@job), class: "btn btn-info" %>
+         <% else %>
+          <% end %>
           </center>
       </div>
     </div>
