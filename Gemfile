@@ -41,6 +41,10 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'masonry-rails', '~> 0.2.4'
 
+
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
+
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

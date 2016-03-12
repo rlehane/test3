@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
 
+
+  resources :users do
+    collection do
+        get 'search'
+      end
+    end
+
   resources :jobs do
     collection do
         get 'search'
@@ -27,7 +34,7 @@ Rails.application.routes.draw do
   get 'volunteers', to: 'pages#volMenu', as: 'volunteers'
   get 'charities_menu', to: 'pages#charMenu', as: 'charities_menu'
   # get 'about', to: 'pages/landing#about-us', as: 'about' 
-  get 'charForm', to: 'charity#form', as: 'charForm'
+  get 'charForm', to: 'contacts#new', as: 'charForm'
   get 'register', to: 'charity#form', as: 'register'
   get 'noticeboard', to: 'jobs#index', as: 'noticeboard'
   get 'notice', to: 'jobs#show', as: 'notice'
@@ -41,6 +48,9 @@ Rails.application.routes.draw do
   get 'pages/volMenu'
 
   get 'charity/form'
+
+  
+  resources "contacts", only: [:new, :create]
 
   
   # get 'pages/login'

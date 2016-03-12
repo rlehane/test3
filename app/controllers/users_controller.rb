@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+    def search
+    if params[:search].present?
+      @users = User.search(params[:search])
+    else
+      @users = User.all
+    end
+  end
+
   # GET /users
   def menu
     @users = User.all
@@ -24,6 +32,10 @@ def index
 
   # GET /users/new
   def new
+    @user = User.new
+  end
+
+  def newChar
     @user = User.new
   end
 
@@ -65,7 +77,7 @@ def index
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :hobbies, :occupation, :location, :about, :tag_list, :email, :password, :password_confirmation, :avatar)
+      params.require(:user).permit(:first_name, :last_name, :hobbies, :occupation, :location, :about, :tag_list, :email, :password, :password_confirmation, :avatar, :charity_name, :phone, :tax_number)
     end
 
 

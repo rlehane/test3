@@ -10,11 +10,11 @@ class NotesController < ApplicationController
   end
 
   # GET /notes/1/edit
-  def edit
-  end
+
 
   # POST /notes
   def create
+
     @note = Note.new(note_params)
     @note.user_id = current_user.id
     @note.job_id = @job.id
@@ -25,19 +25,45 @@ class NotesController < ApplicationController
   end
 
   # PATCH/PUT /notes/1
+  # def update
+  #   if @note.update(note_params)
+  #     redirect_to @note, notice: 'Note was successfully updated.'
+  #   else
+  #     render :edit
+  #   end
+  # end
+
+  # # DELETE /notes/1
+  # def destroy
+  #   @note.destroy
+  #   redirect_to notes_url, notice: 'Note was successfully destroyed.'
+  # end
+
+
+  def edit
+    @note = Note.find(params[:id])
+  end
+
   def update
-    if @note.update(note_params)
-      redirect_to @note, notice: 'Note was successfully updated.'
+   @note = Note.find(params[:id])
+  @job = @note.job
+
+        if @note.update(params[:note].permit(:note))
+      redirect_to job_path(@job)
     else
-      render :edit
+      render 'edit'
     end
   end
 
-  # DELETE /notes/1
+
   def destroy
-    @note.destroy
-    redirect_to notes_url, notice: 'Note was successfully destroyed.'
-  end
+        @note = Note.find(params[:id])
+        @job = Job.find(params[:job_id])
+        @note.destroy
+           redirect_to job_path(@job) 
+        end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

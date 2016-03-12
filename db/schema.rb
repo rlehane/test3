@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301034857) do
+ActiveRecord::Schema.define(version: 20160307185846) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20160301034857) do
     t.integer  "job_id"
   end
 
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -106,7 +107,18 @@ ActiveRecord::Schema.define(version: 20160301034857) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "roles_mask"
+    t.string   "charity_name"
+    t.integer  "phone"
+    t.integer  "tax_number"
   end
+
+  create_table "users_roles", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
+
+  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
 
   create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"

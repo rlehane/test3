@@ -1,9 +1,11 @@
-<div id="job">
+<div id="index">
 <div class="container">
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
+    <div align='left'>
      <%= link_to 'Back', jobs_path, class: "btn btn-info" %>
+     </div>
     <center>
      <h2> <%= @job.title %> </h2>
     </center>
@@ -67,7 +69,9 @@
       </div>
     </div>
 
-
+          <center>
+          <br>
+          <br>
             <% if @job.get_upvotes.size == @job.no_vols %>
             <p> We have enough volunteers for this event! Please volunteer at another event if you can.</p>
             <% else %>
@@ -86,6 +90,7 @@
            <% end %>
 
             </div>
+              </center>
 
 
         <div class= "comments">
@@ -107,8 +112,13 @@
                   <tr>
                     <td><strong>Comment:</strong></td>
                     <td><%= note.comment %></td>
+                    
+                     <% if current_user = note.user_id %>
+                    <%= link_to 'Delete', [note.job, note], :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                    <% end %>
+                    
                   </tr>
-                </tbody>
+               </tbody>
               </table>
               </div>
                 <%end%>

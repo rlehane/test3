@@ -1,0 +1,27 @@
+<div id="Vol-menu">
+<br>
+<br>
+      <div align="left">
+        <%= link_to "All Volunteers", vols_menu_path, :class => 'btn btn-info' %>
+      </div>
+      <div class = "container">
+   <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-sm-6 col-md-3">
+
+        <div class="thumbnail">
+          <h2> <%= user.first_name %> </h2>
+            <%= image_tag user.avatar.url, :class => 'img-thumbnail' %>
+          <br>
+          <p> <strong> Name: </strong> <%= user.first_name %> </p>
+          <p> <strong> Occupation: </strong> <%= user.occupation%> </p>
+          <p> <strong> Location: </strong> <%= user.location %> </p>
+          <p> <strong> Contact: </strong> <%= user.email %> </p>
+          <p> <strong> Skills: </strong> <%= raw user.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %> </p>
+
+        </div>
+      </div>
+    <% end %>
+   </div>
+  </div>
+  </div>

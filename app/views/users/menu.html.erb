@@ -1,21 +1,33 @@
-
 <div id="Vol-menu">
 
   <h2>Search Volunteers</h2>
-
-    <div class="vol-header">
+    <div class = "search_bar">
+           <%= form_tag search_users_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
+              <p>
+              <%= text_field_tag :search, params[:search], class: "form-control", :placeholder => 'Search...' %>
+              <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+              </p>
+              <%end%>
+      </div>
+      <div align="left">
+        <%= link_to "All Volunteers", vols_menu_path, :class => 'btn btn-info' %>
+      </div>
+       <div class="vol-header">
         <div id="tag_cloud">
         <% tag_cloud User.tag_counts, %w[s m l] do |tag, css_class| %>
           <%= link_to tag.name, tag_path(tag.name), class: css_class %>
         <% end %>
         </div>
     </div>
-     <% @users.each do |user| %>
+    <br>
+      <div class = "container">
+   <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-sm-6 col-md-3">
 
-   <div class="col-sm-4">
-      <div class="vol-profile"> 
-
-          <%= image_tag user.avatar.url %>
+        <div class="thumbnail">
+          <h2> <%= user.first_name %> </h2>
+        <%= image_tag user.avatar.url %>
 
         <div class="vol-line">  
           <strong>First name:</strong>
@@ -41,13 +53,15 @@
         <strong>Skills:</strong>
             <%= raw user.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
         </div>
+</div>
 
         </div>
+              <% end %>
     </div>
-    </div>
-      <% end %>
+
 
          <%= link_to 'List of Volunteers', users_path, :class => 'btn btn-primary' %>
 </div>
+</div>
 
-
+</div>
