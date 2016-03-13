@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307185846) do
+ActiveRecord::Schema.define(version: 20160313004327) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(version: 20160307185846) do
     t.integer  "job_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+  add_index "roles", ["name"], name: "index_roles_on_name"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

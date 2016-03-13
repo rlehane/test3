@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-
+resourcify
 
 acts_as_votable
 

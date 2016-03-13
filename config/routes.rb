@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'user_show', to: 'users#show', as: 'user_show'
   get 'vols_menu', to: 'users#menu', as: 'vols_menu'
+  get 'dashboard', to: 'users#dashboard', as: 'dashboard' 
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'volunteers', to: 'pages#volMenu', as: 'volunteers'

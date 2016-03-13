@@ -22,7 +22,7 @@
       <% @users.each do |user| %>
         <tr>
         <h3></h3>
-          <td><%= image_tag user.avatar.url %></td>
+          <td><div class="thumbnail"> <%= image_tag user.avatar.url %></div>/td>
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
           <td><%= user.email %></td>

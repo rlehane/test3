@@ -41,12 +41,17 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'masonry-rails', '~> 0.2.4'
 
+gem 'rolify', '~> 5.0'
+
+gem 'cancancan', '~> 1.13', '>= 1.13.1'
 
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'rails_admin', '~> 0.8.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

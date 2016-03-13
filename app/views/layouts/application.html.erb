@@ -56,7 +56,11 @@
 
              <li class="scroll">
              <% if current_user %>
-              <%= link_to "My Profile", current_user %>
+                <% if current_user.has_role? :admin %>
+                  <%= link_to "Dashboard", dashboard_path %>
+               <% else %>
+                  <%= link_to "My Profile", current_user %>
+                <%end%>
               </li>
 
               <li class="scroll">

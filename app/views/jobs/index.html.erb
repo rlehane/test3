@@ -1,5 +1,6 @@
 <div id= "index">
 <div class = "container">
+<br>
  
  <% if current_user %>
 
@@ -16,15 +17,22 @@
           <% yield %>
       </ul>
     </div>
+    <br>
 
 
     <div class = "search_bar">
-           <%= form_tag search_jobs_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
-              <p>
-              <%= text_field_tag :search, params[:search], class: "form-control", :placeholder => 'Search...' %>
-              <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-              </p>
-              <%end%>
+
+       <div align = 'left'>
+          <%= link_to 'New Job', new_job_path, :class => 'btn btn-primary' %>
+       </div>
+  
+       <%= form_tag search_jobs_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
+           <p>
+             <%= text_field_tag :search, params[:search], class: "form-control", :placeholder => 'Search...' %>
+             <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+          </p>
+       <%end%>
+      
       </div>
 
     <div class = "jobs">
@@ -47,7 +55,7 @@
       <% end %>
      </div>
     
-    <%= link_to 'New Job', new_job_path, :class => 'btn btn-primary' %>
+
   
   <%else%>
     <div class="jumbotron">
