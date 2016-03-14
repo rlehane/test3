@@ -62,7 +62,7 @@
           </table>
           <center>
 
-           <!-- if current_user.id == @job.user_id  --> <!-- IN RUBY -->
+           <%if (current_user.id == @job.user_id) || (current_user.has_role? :admin) %>
 
            <% if can? :update, Job %>
             <%= link_to 'Edit', edit_job_path(@job), class: "btn btn-info" %>
@@ -71,7 +71,7 @@
            <% if can? :destroy, Job %>
             <%= link_to 'Delete', @job, :class => 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure you want to delete this job?' } %>
 
-
+         <% end %>
 
           <% end %>
           </center>
@@ -122,7 +122,7 @@
                     <td><strong>Comment:</strong></td>
                     <td><%= note.comment %></td>
                     
-                     <% if current_user = note.user_id %>
+            <%if (current_user.id == note.user_id) || (current_user.has_role? :admin) %>
                     <%= link_to 'Delete', [note.job, note], :method => :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
                     <% end %>
                     
@@ -134,7 +134,9 @@
                 <%end%>
 
             <br>
-             <%= link_to "Write Comment", new_job_note_path(@job), class: "btn btn-primary" %>   
+             <%= link_to "Write Comment", new_job_note_path(@job), class: "btn btn-primary" %>  
+
+
             <br>
             <br>
 

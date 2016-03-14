@@ -8,7 +8,8 @@ searchkick
 belongs_to :user
 belongs_to :category
 has_many :notes
-
+  
+  validates :user_id, presence: true
   validates :title,
             presence: true
   validates :charity,

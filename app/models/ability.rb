@@ -17,7 +17,13 @@ class Ability
 
         cannot :read, Note
       end
+      
     if user.has_role? :charity
+
+        can :create, Job 
+
+
+
 
 
 

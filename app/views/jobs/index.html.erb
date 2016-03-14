@@ -23,7 +23,9 @@
     <div class = "search_bar">
 
        <div align = 'left'>
+        <% if current_user.has_role? :admin || :charity%>
           <%= link_to 'New Job', new_job_path, :class => 'btn btn-primary' %>
+        <%end%>
        </div>
   
        <%= form_tag search_jobs_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
