@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   rolify
   searchkick
 
-
+  resourcify
   acts_as_voter
 
   rolify :before_add => :before_add_method
@@ -40,6 +40,14 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
 
   end 
+
+
+   private 
+  def set_priority
+    if user.has_role? :admin
+      self.priority = 3
+    end
+  end
 
 
   has_attached_file :avatar

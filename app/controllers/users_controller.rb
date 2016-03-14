@@ -77,7 +77,13 @@ def index
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :hobbies, :occupation, :location, :about, :tag_list, :email, :password, :password_confirmation, :avatar, :charity_name, :phone, :tax_number, :roles[])
+
+      if current_user.has_role? :admin
+      params.require(:user).permit(:first_name, :last_name, :location, :about, :email, :password, :password_confirmation, :avatar, :charity_name, :phone, :tax_number, :roles[])
+    end
+      if !(current_user.has_role? :admin )
+      params.require(:user).permit(:first_name, :last_name, :hobbies, :occupation, :location, :about, :tag_list, :email, :password, :password_confirmation, :avatar, :roles[])
+    end
     end
 
 

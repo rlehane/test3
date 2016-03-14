@@ -33,7 +33,7 @@
            </li>
               <li class="scroll">
                   <% if current_user %>
-                 You are logged in as <%= current_user.first_name %>
+                 Welcome <%= current_user.first_name %>
                  <% else %>
                  <%end%>
               </li>
@@ -57,7 +57,7 @@
              <li class="scroll">
              <% if current_user %>
                 <% if current_user.has_role? :admin %>
-                  <%= link_to "Dashboard", dashboard_path %>
+                  <%= link_to "Dashboard", '/admin' %>
                <% else %>
                   <%= link_to "My Profile", current_user %>
                 <%end%>
@@ -105,7 +105,7 @@
     <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
  -->
 <!--         <div class="footer-logo">
-         <%= image_tag("logo.png", :class => "img-responsive", :alt => "rss feed") %>
+
        </div>  -->
 <!--         <div class="social-icons">
           <ul>

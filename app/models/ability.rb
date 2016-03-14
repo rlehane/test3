@@ -16,19 +16,12 @@ class Ability
         end
 
         cannot :read, Note
-
+      end
     if user.has_role? :charity
 
 
 
     end
-
-
-
-  end
-    
-
-
 
   end
 end
