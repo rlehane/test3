@@ -1,13 +1,18 @@
 <div id="user-info">
 
-<h2>New Volunteer</h2>
+ <% if current_user.has_role? :admin %>
+	<h2>New Charity</h2>
 
-	<div class="form-full">
-		<div class="form-content">
-			<%= render 'form' %>
+	<%else%>
+	<h2>New Volunteer</h2>
+	<%end%>
+
+		<div class="form-full">
+			<div class="form-content">
+				<%= render 'form' %>
+			</div>
+				<%= link_to 'Back', volunteers_path, :class => 'btn btn-info' %>
+
 		</div>
-			<%= link_to 'Back', volunteers_path, :class => 'btn btn-info' %>
-
-	</div>
 </div>
 

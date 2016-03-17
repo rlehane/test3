@@ -1,5 +1,5 @@
 <div id="Vol-menu">
-
+      <div class = "container">
   <h2>Search Volunteers</h2>
     <div class = "search_bar">
            <%= form_tag search_users_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
@@ -8,6 +8,8 @@
               <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
               </p>
               <%end%>
+                   <br>
+      <br>
       </div>
       <div align="left">
         <%= link_to "All Volunteers", vols_menu_path, :class => 'btn btn-info' %>
@@ -20,9 +22,10 @@
         </div>
     </div>
     <br>
-      <div class = "container">
+
    <div class="row">
     <% @users.each do |user| %>
+
       <div class="col-sm-6 col-md-3">
 
         <div class="thumbnail">
@@ -53,10 +56,10 @@
         <strong>Skills:</strong>
             <%= raw user.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
         </div>
-</div>
 
-        </div>
-              <% end %>
+  </div>
+    </div>
+     <% end %>
     </div>
 
 

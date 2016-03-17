@@ -1,0 +1,20 @@
+
+<div class = "container">
+<br>
+   <div class="row">
+    <% @jobs.each do |job| %>
+      <div class="col-sm-6 col-md-3">
+
+        <div class="thumbnail">
+          <h2> <%= job.title %> </h2>
+          <%= link_to (image_tag job.image.url, class: 'image'), job %>
+          <br>
+          <p> <strong> Charity: </strong> <%= job.charity%> </p>
+          <p> <strong> Location: </strong> <%= job.location%> </p>
+          <p> <strong> Date: </strong> <%= job.date%> </p>
+
+        </div>
+      </div>
+    <% end %>
+   </div>
+  </div>

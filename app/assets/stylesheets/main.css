@@ -39,12 +39,28 @@ h4 {
  /* padding-top: 30px;*/
  /* position: center;*/
 }
+h5 {
+  font-size: 25px;
+  font-weight: 4px;
+  text-align: left;
+  margin-top: 19%;
+  color: #666666;
+
+ /* position: center;*/
+}
 
 
 h6 {
   font-size: 40px;
   color: #B892FF;
 }
+
+
+.btn-success {
+   color: #666666;
+   background-color: #fff;
+   border-color: #357ebd;
+  }
 
 .parallax {
   background-size: cover;
@@ -102,6 +118,9 @@ a {
   transition: 300ms;
 }
 
+.navbar-toggle{
+  background-color: #B892FF; 
+}
 a:focus, 
 a:hover {
   text-decoration: none;

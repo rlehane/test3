@@ -25,6 +25,12 @@ h3 {
   color: #8736D1;
 }
 
+#charity_dashboard{
+    background: linear-gradient(to left, #fff, #03D298);
+
+}
+
+
 #user-info{
   border-right:8px solid #FFFFFF;
   border-bottom:8px solid #FFFFFF;
@@ -222,4 +228,57 @@ h3 {
 {
   background-color: #fff;
 }
+
+#charity_dashboard{
+  
+}
+
+
+.Profile-info{
+  margin-left: 4%;
+}
+
+
+.container{
+  
+    margin-top: 5%;
+}
+.panel{
+  margin-top: 2%;
+}
+
+.button{
+  content-align: center;
+  margin-top: 2%;
+}
+
+.icon-new {
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-size: 36px;
+  height: 120px;
+  line-height: 120px;
+  width: 120px;  
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+.new-buttons .col-sm-6:hover .icon-new  {
+  background-color: #8736D1;
+}
+.new-buttons .col-sm-6 .icon-new  {
+  background-color: #B892FF;
+}
+
+.new-job{
+  color:#8F8F8F;
+}
+
+.info{
+  text-align:center;
+}
+
+
+
 
