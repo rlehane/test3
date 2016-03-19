@@ -114,7 +114,7 @@
 
                   <tr>
                     <td><strong>Commenter:</strong></td>
-                    <td><%= link_to note.user.email, '#' %></td>
+                    <td><%= link_to note.user.email, note.user %></td>
                   </tr>
                   <br>
                   <tr>
@@ -143,7 +143,7 @@
             <% if current_user.has_role? :admin %>
             <center>
               <h1> Signed up volunteers </h1>
-              <% @job.votes_for.voters.each do |p| %> <%= p.email %> <% end %>
+              <% @job.votes_for.voters.each do |p| %> <%= link_to p.email, p %> <% end %>
             </center>
             <%end%>
 
