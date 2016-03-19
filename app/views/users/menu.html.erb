@@ -30,7 +30,7 @@
 
         <div class="thumbnail">
           <h2> <%= user.first_name %> </h2>
-        <%= image_tag user.avatar.url %>
+          <%= link_to (image_tag user.avatar.url, class: 'image'), user %>
 
         <div class="vol-line">  
           <strong>First name:</strong>
@@ -38,19 +38,10 @@
         </div>
 
         <div class="vol-line">  
-          <strong>Occupation:</strong>
-          <%= user.occupation %>
-        </div>
-
-        <div class="vol-line">  
           <strong>Location:</strong>
           <%= user.location %>
         </div>
 
-        <div class="vol-line">  
-          <strong>Contact:</strong>
-          <%= user.email %>
-        </div>
 
         <div class="vol-line">  
         <strong>Skills:</strong>

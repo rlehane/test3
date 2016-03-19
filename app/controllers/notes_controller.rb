@@ -2,7 +2,6 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_action :set_job
 
-  before_filter :authenticate
 
   # GET /notes/new
   def new

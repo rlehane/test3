@@ -31,9 +31,15 @@
 
 .text_area{
   font-size: 22px;
-  background-color: #fff;
+  background-color: transparent;
 
 }
+
+ textarea.form-control {
+ height: auto;
+   line-height: 30px;
+   background-color: transparent;
+ }
 
 .log-in{
   color: #fff;

@@ -55,6 +55,30 @@ h6 {
   color: #B892FF;
 }
 
+ textarea {
+  font-family: inherit;
+  font-size: inherit;
+  opacity: 1;
+ }
+ textarea.form-control {
+ height: auto;
+   line-height: 30px;
+   background-color: transparent;
+ }
+
+   }
+  textarea.input-sm,
+   select[multiple].input-sm {
+     height: auto;
+ 
+     line-height: 46px;
+   }
+ textarea.input-lg,
+   select[multiple].input-lg {
+     height: auto;
+ 
+     line-height: 46px;
+   }
 
 .btn-success {
    color: #666666;
@@ -87,7 +111,7 @@ h6 {
 .parallax input[type="url"]:hover,
 .parallax input[type="password"],
 .parallax input[type="password"]:hover,
-.parallax textarea,
+.parallax textarea[type="about"],
 .parallax textarea:hover {
   font-weight: 300;
   color: #fff;
