@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+
+      skip_authorization_check
   def new
   end
   def create
@@ -7,7 +9,9 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to current_user, notice: 'Log in successful!'
     else
-      render :new
+      flash[:error] = "Incorrect username/password! Please try again!" 
+      redirect_to login_path
+
     end
 
   # def create
@@ -21,8 +25,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+
     session[:user_id] = nil
     redirect_to root_url, notice: 'Logged out!'    
+
     # redirect_to volMenu_url, notice: 'Logged out!'
   end
 

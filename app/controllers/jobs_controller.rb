@@ -2,7 +2,8 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   # before_action :authenticate_user!, except: [:index, :show]
   # GET /jobs
- 
+skip_authorization_check
+
   def search
     if params[:search].present?
       @jobs = Job.search(params[:search])
@@ -83,4 +84,5 @@ class JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:title, :charity, :description, :date, :time, :no_vols, :location, :image, :category_id)
     end
+
 end

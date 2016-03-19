@@ -4,6 +4,7 @@
 
 body{
   background: linear-gradient(to left, #8CFFD8, #B892FF);
+  margin-top: 6%;
 }
 
 table {
@@ -15,6 +16,11 @@ td, th {
   text-align: left;
 }
 
+ textarea.form-control {
+  min-height: 180px;
+  resize:none;
+  background-color: transparent;
+  }
 
 
 #index

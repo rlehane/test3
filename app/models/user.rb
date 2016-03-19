@@ -28,8 +28,7 @@ class User < ActiveRecord::Base
             presence: true
   validates :about,
             presence: true
-  validates :tag_list,
-            presence: true                     
+                  
   validates :email,
             presence: true,
             uniqueness: true,

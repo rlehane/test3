@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+skip_authorization_check
     def search
     if params[:search].present?
       @users = User.search(params[:search])
@@ -81,7 +81,7 @@ def index
       if current_user.has_role? :admin
       params.require(:user).permit(:first_name, :last_name, :location, :about, :email, :password, :password_confirmation, :avatar, :charity_name, :phone, :tax_number, :roles[])
     end
-      if !(current_user.has_role? :admin )
+      if !(current_user.has_role? :admin)
       params.require(:user).permit(:first_name, :last_name, :hobbies, :occupation, :location, :about, :tag_list, :email, :password, :password_confirmation, :avatar, :roles[])
     end
     end

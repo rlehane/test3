@@ -1,11 +1,12 @@
 class Ability
+
   include CanCan::Ability
-
   def initialize(user)
-  can :read, :all
-  can :access, :rails_admin
+  can :access, :rails_admin   # grant access to rails_admin
+  can :dashboard  
+  can :manage, :all 
 
-    if user.has_role? :admin
+    if user && (user.has_role? :admin)
       can :manage, :all  # can manage (Read, Create, Update, Destroy, ...) everything
       can :access, :rails_admin
     else 
@@ -16,11 +17,11 @@ class Ability
         can :destroy, Job do |job|
          job.try(:user) == user
         end
-
+      can :access, :rails_admin
         cannot :read, Note
       end
 
-    if user.has_role? :charity
+    if user && (user.has_role? :charity)
 
         can :create, Job 
 

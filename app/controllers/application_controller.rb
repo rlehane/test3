@@ -5,7 +5,17 @@ class ApplicationController < ActionController::Base
 	include CanCan::ControllerAdditions
 
     # check_authorization
-  
+  # check_authorization
+  skip_authorization_check
+
+# rescue_from CanCan::AccessDenied do |exception|
+#   flash[:error] = "Access denied!!!."
+#   redirect_to jobs_url
+# end
+
+
+   def admin
+  end
   private
   def current_user
     User.where(id: session[:user_id]).first
