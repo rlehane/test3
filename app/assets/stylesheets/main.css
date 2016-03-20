@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: #666;
-  background-color: #fff;
+
 }
 
 h1, h2, h3, h4, h5, h6, {
@@ -151,9 +151,9 @@ a:hover {
   outline: none
 }
 
-section {
+/*section {
   padding: 90px 0;
-}
+}*/
 
 .heading {
   padding-bottom: 90px;

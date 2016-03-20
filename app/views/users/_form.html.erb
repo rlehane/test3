@@ -1,19 +1,9 @@
-<%= form_for @user, html: { multipart: true } do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for @user, html: { multipart: true } do |f| %>
 
  <div id="form-options">
  
- <% if current_user.has_role? :admin %>
+ <% if current_user && (current_user.has_role? :admin) %>
 
 <div class="field">
     <%= f.text_field :charity_name, :placeholder => 'Charity Name' %>
@@ -57,7 +47,13 @@
 
 
 
- <% if !(current_user.has_role? :admin ) %>
+ <% if current_user && !(current_user.has_role? :admin) %>
+<!-- for a volunteer registration, anyone can do this -->
+    <h4> As a volunteer you do not have access to this page!</h4>
+
+ <% end %>
+
+ <% if !(current_user) %>
 <!-- for a volunteer registration, anyone can do this -->
     <div class="field">
       <%= f.text_field :first_name, :placeholder => 'First Name'  %>
@@ -95,13 +91,10 @@
    <%= f.submit class: 'btn btn-primary' %>
     </div>
  <% end %>
- <% end %>
-
-
 
 
 </div>
-
+<%end%>
 
 
 

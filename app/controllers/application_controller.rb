@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   # check_authorization
   skip_authorization_check
 
+@users = User.all
 # rescue_from CanCan::AccessDenied do |exception|
 #   flash[:error] = "Access denied!!!."
 #   redirect_to jobs_url

@@ -11,7 +11,6 @@ class ContactsController < ApplicationController
     else
       flash.now[:error] = 'Cannot send message. Please try again!'
       render :new
-      redirect_to charForm_path
     end
   end
 end

@@ -11,7 +11,7 @@
 
         <div class="thumbnail">
           <h2> <%= user.first_name %> </h2>
-            <%= image_tag user.avatar.url, :class => 'img-thumbnail' %>
+          <%= link_to (image_tag user.avatar.url, class: 'image'), user %>
           <br>
           <p> <strong> Name: </strong> <%= user.first_name %> </p>
           <p> <strong> Occupation: </strong> <%= user.occupation%> </p>

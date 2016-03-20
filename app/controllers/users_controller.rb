@@ -19,7 +19,6 @@ skip_authorization_check
     @users = User.all
   end
 
-  end
 
 def index
     @users = User.all
@@ -46,6 +45,7 @@ def index
   # POST /users
   def create
     @user = User.new(user_params)
+
     if @user.save
       session[:user_id] = @user.id
       redirect_to @user, notice: 'You are now a TFC volunteer!'
@@ -53,7 +53,7 @@ def index
       render :new
     end
   end
-
+end
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
@@ -76,15 +76,15 @@ def index
     end
 
     # Only allow a trusted parameter "white list" through.
-    def user_params
+  def user_params
 
-      if current_user.has_role? :admin
-      params.require(:user).permit(:first_name, :last_name, :location, :about, :email, :password, :password_confirmation, :avatar, :charity_name, :phone, :tax_number, :roles[])
+  if current_user && (current_user.has_role? :admin) 
+      params.require(:user).permit(:charity_name, :first_name, :last_name, :location, :about, :email, :password, :password_confirmation, :avatar, :phone, :tax_number)
     end
-      if !(current_user.has_role? :admin)
+  if !(current_user) 
       params.require(:user).permit(:first_name, :last_name, :hobbies, :occupation, :location, :about, :tag_list, :email, :password, :password_confirmation, :avatar, :roles[])
     end
-    end
+  end
 
 
 
