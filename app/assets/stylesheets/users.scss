@@ -25,7 +25,7 @@ h3 {
   margin-right: 8px;
   color: #8736D1;
 }
-
+ 
 #charity_dashboard{
     background: linear-gradient(to left, #fff, #03D298);
 
@@ -180,11 +180,11 @@ h3 {
 .vol-header{
 
 
-  margin-left: 25%;
-  margin-right: 25%;
-  text-align: left;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
   color: #fff;
-  background-color: rgba(255,255,255,0.5) 
+  background-color: rgba(255,255,255, 0.7);
 }
 
 
@@ -206,9 +206,10 @@ h3 {
 #tag_cloud {
   width: 450px;
   line-height: 1.6em;
+  color: #fff;
   .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.8em; }
+  .m { font-size: 1.6em; }
+  .l { font-size: 2.2em; }
 }
 
 
