@@ -29,9 +29,7 @@
         <% if (current_user.has_role? :admin) || (current_user.has_role? :charity)  %>
           <%= link_to 'New Job', new_job_path, :class => 'btn btn-primary' %>
         <% end %>
-        <% if current_user.has_role? :admin %>
-         <%= link_to "Sign up charity", signup_path, :class => 'btn btn-success' %>
-        <%end%>
+
        </div>
   
        <%= form_tag search_jobs_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>

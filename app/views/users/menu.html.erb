@@ -8,7 +8,7 @@
               <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
               </p>
               <%end%>
-                   <br>
+              <br>
       <br>
       </div>
       <div align="left">
@@ -24,8 +24,8 @@
     <br>
 
    <div class="row">
-    <% @users.each do |user| %>
-<% if !(user.has_role? :admin || :charity) %>
+          <% @users.each do |user| if !(user.has_role? :charity) && !(user.has_role? :admin) %>
+
       <div class="col-sm-6 col-md-3">
 
         <div class="thumbnail">
@@ -54,6 +54,7 @@
     </div>
          <% end %>
      <% end %>
+
     </div>
 
 

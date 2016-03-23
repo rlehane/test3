@@ -68,16 +68,12 @@ h3 {
 }
 
 
-
-
-
 #Profile{
 }
 
 .panel{
-content-align:center;
-    background-color: rgba(255,255,255,0.4); 
-        border: 7px solid #B892FF;
+ background-color: rgba(255,255,255,0.9); 
+
 }
 
 .Profile-line{
@@ -130,6 +126,18 @@ content-align:center;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+
+.btn-success{
+  border-radius: 6px;
+    padding: 10px 16px;
+    border: 0 none;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #34FFB1;
+}
+
 
 
 
@@ -220,10 +228,7 @@ content-align:center;
 }
 
 
-.container{
-  
-    margin-top: 5%;
-}
+
 .panel{
   margin-top: 2%;
 }
@@ -258,6 +263,15 @@ content-align:center;
 
 .info{
   text-align:center;
+}
+
+
+#dash{
+  
+}
+
+.box{
+  margin-top: 8%;
 }
 
 

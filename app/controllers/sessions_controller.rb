@@ -9,8 +9,10 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
 
-      if (current_user.has_role? :admin) || (current_user.has_role? :charity)
+      if (current_user.has_role? :charity) 
         redirect_to dashboard_path, notice: 'Log in successful!'
+      elsif (current_user.has_role? :admin) 
+        redirect_to dash_path, notice: 'Log in successful!'
       else
         redirect_to current_user, notice: 'Log in successful!'
       end

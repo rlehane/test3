@@ -1,0 +1,82 @@
+<div id="dash"> 
+<!-- if not admin show profile page, if admin show new dashboard and wrote this here -->
+    
+
+<%if current_user.has_role? :admin %>
+
+
+    <br>
+    <div class = "container">
+    <br>
+
+
+
+    <div class="col-md-12">
+    <div class= "panel">
+    <center>
+      <h2> Admin Dashboard</h2>
+
+          </center>
+    </div>
+</div>
+   
+   <div class="col-md-6">
+   <div class= "box">
+    <div class= "panel">
+     <h6>Settings</h6>
+     <%= link_to 'Edit', edit_user_path(current_user), :class => 'btn btn-info' %> 
+    </div>
+   </div>
+   </div>
+
+
+    <div class="col-md-6">
+     <div class= "box">
+    <div class= "panel">
+        <h6>TFC Volunteers</h6>
+        <center>
+         <%= link_to 'List of Volunteers', users_path, :class => 'btn btn-primary' %>
+         </center>
+      </div>
+    </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+       <div class= "box">
+    <div class= "panel">
+        <h6>TFC Admin</h6>
+        <center>
+         <%= link_to 'Admin Panel', '/admin', :class => 'btn btn-warning' %>
+         </center>
+      </div>
+    </div>
+    </div>
+
+        <div class="col-sm-6 col-md-6">
+               <div class= "box">
+    <div class= "panel">
+        <h6>TFC Charities</h6>
+        <center>
+         <%= link_to 'Charities', users_path, :class => 'btn btn-success' %>
+         <br>
+         <br>
+          <%= link_to "Sign up charity", signup_path, :class => 'btn btn-success' %>
+         </center>
+      </div>
+    </div>
+    </div>
+
+ 
+<%else%>
+    <div class="col-sm-12">
+    <div class= "panel">
+            <center>
+        <h6>As you are not an admin you cannot access this dashboard</h6>
+         </center>
+      </div>
+    </div>
+    </div>
+        </div>
+
+<%end%>
+</div>

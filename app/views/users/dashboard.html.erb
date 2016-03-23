@@ -1,5 +1,7 @@
 <div id="charity_dashboard"> 
 <!-- if not admin show profile page, if admin show new dashboard and wrote this here -->
+   
+  <%if (current_user.has_role? :admin) || (current_user.has_role? :charity)%>
     <br>
     <div class = "container">
     <br>
@@ -33,7 +35,7 @@
     <div class="Profile-line">  
         <strong>Applicant's Last name:</strong>
         <%= current_user.last_name %>
-    </di
+    </div>
     <div class="Profile-line">  
         <strong>About:</strong>
         <%= current_user.about %>
@@ -80,16 +82,18 @@
             <div class="info">  
 
     <div class= "panel">
-           </center> <h6>Jobs/Events</h6></center>
+           <center> <h6>Jobs/Events</h6></center>
         <div class="info">  
              <div class="text-center new-buttons">
         <div class="row">
           <div class="col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <div class="volunteer-icon">
+            <center>
              <a class="new-job" href="newjob"><i class="fa fa-plus-square fa-4x"></i></a>
             </div>
             <div class="volunteer-info">
               <h4>New Job</h4>
+              </center>
             </div>
           </div>
 
@@ -127,4 +131,14 @@
 
 
       </div>
+
+   <%else%>
+       <div class="col-sm-12">
+    <div class= "panel">
+            <center>
+        <h6>As you are not a charity you cannot access this dashboard</h6>
+         </center>
+      </div>
+    </div>
+<%end%>
 </div>

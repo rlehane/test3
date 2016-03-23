@@ -39,7 +39,11 @@
           <%end%>
              <% if current_user %>
                <li class="scroll">
-                <h5> Welcome <%= current_user.first_name %> </h5>
+                <% if current_user.has_role? :charity %>      
+                  <h5> Welcome <%= current_user.charity_name %> </h5>
+                <%else%>
+                   <h5> Welcome <%= current_user.first_name %> </h5>
+                <%end%>
               </li>
                  <%end%>
         
@@ -49,20 +53,22 @@
             <% if controller.controller_name == "pages" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
               <%= link_to "Home", root_path %>
             </li>
-           <li class="scroll">
+            <% if controller.controller_name == "pages" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
               <%= link_to "About Us", root_path %>
            </li>
-           <li class="scroll">
+            <% if controller.controller_name == "users" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
               <%= link_to "Volunteers", vols_menu_path %>
            </li>
-           <li class="scroll">
+            <% if controller.controller_name == "jobs" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
               <%= link_to "Noticeboard", noticeboard_path %>
            </li>
 
              <li class="scroll">
              <% if current_user %>
-                <% if current_user.has_role? :admin %>
-                  <%= link_to "Dashboard", '/admin' %>
+                <% if current_user.has_role? :charity %>
+                  <%= link_to "My Dashboard", 'dashboard' %>
+                <% elsif current_user.has_role? :admin %>
+                  <%= link_to "Dashboard", 'dash' %>  
                <% else %>
                   <%= link_to "My Profile", current_user %>
                 <%end%>
@@ -72,11 +78,6 @@
               <%= link_to "Log Out", logout_path %>
               </li>
               <% else %>
-<!--               <%= link_to "Sign Up", signup_path %> 
-              </li>
-             <li class="scroll">
-              <%= link_to "Log In", login_path %>
-              </li> -->
           <% end %>
 
             <li><a class="envelope" href="mailto:tfctimeforcharity@gmail.com"><i class="fa fa-envelope fa-1x"></i></a></li>

@@ -27,10 +27,6 @@
                 <td><%= @job.charity %></td>
               </tr>
               <tr>
-                <td><strong>Creator:</strong></td>
-                <td><%= @job.user_id %></td>
-              </tr>
-              <tr>
                 <td><strong>Description:</strong></td>
                 <td><%= @job.description %></td>
               </tr>
@@ -135,7 +131,7 @@
             <br>
              <!--<%= link_to "Write Comment", new_job_note_path(@job), class: "btn btn-primary" %> -->
 
-             
+
   <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Write a Comment</a>
 
           <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -161,7 +157,8 @@
             <br>
 
           </div>
-            <% if (current_user.has_role? :admin) || (current_user.has_role? :charity) %>
+            <% if (current_user.has_role? :admin) %> 
+            <% elsif (current_user.has_role? :charity) && (current_user.id == @job.user_id)%>
             <center>
               <h1> Signed up volunteers </h1>
               <% @job.votes_for.voters.each do |p| %> <%= link_to p.email, p %> <% end %>

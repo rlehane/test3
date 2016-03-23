@@ -1,0 +1,37 @@
+<div id="Vol-menu">
+      <div class = "container">
+
+   <div class="row">
+          <% @users.each do |user| if (user.has_role? :charity) %>
+
+
+      <div class="col-sm-6 col-md-3">
+
+        <div class="thumbnail">
+          <h2> <%= user.charity_name %> </h2>
+          <%= link_to (image_tag user.avatar.url, class: 'image'), user %>
+
+        <div class="vol-line">  
+          <strong>Location:</strong>
+          <%= user.location %>
+        </div>
+
+        <div class="vol-line">  
+          <strong>About:</strong>
+          <%= user.about %>
+        </div>
+
+
+  </div>
+    </div>
+         <% end %>
+     <% end %>
+
+    </div>
+
+
+
+</div>
+</div>
+
+</div>
