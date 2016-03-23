@@ -2,12 +2,11 @@
 <div id="Profile"> 
 
 <!-- if not admin show profile page, if admin show new dashboard and wrote this here -->
-
-
+   <div class= "panel">
 <div class="Profile-header">    
   <h2>Profile Page </h2>
 </div>
-  <div class="Profile-info">  
+
   <%= image_tag @user.avatar.url, :class => 'img-thumbnail' %>
       <div class="Profile-line">  
         <strong>First name:</strong>
@@ -42,7 +41,7 @@
         <strong>Skills:</strong>
           <%= @user.tag_list.join(', ') %>
     </div>
-  </div> 
+
 
   <div class="Profile-links">  
    <%if (current_user.id == @user.id) || (current_user.has_role? :admin) %>
@@ -53,6 +52,8 @@
 
 </div>
   </div>
+  </div>
+
 
 
 

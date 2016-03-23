@@ -45,7 +45,9 @@
 
         <div class="vol-line">  
         <strong>Skills:</strong>
+        <center>
             <%= raw user.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+        </center>
         </div>
 
   </div>

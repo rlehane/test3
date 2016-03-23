@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -44,8 +45,8 @@
         
           </ul>
 
-          <ul class="nav navbar-nav navbar-right">                 
-            <li class="scroll active">
+          <ul class="nav navbar-nav navbar-right">
+            <% if controller.controller_name == "pages" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
               <%= link_to "Home", root_path %>
             </li>
            <li class="scroll">

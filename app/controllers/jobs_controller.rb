@@ -26,6 +26,7 @@ skip_authorization_check
   # GET /jobs/1
   def show
     @notes = Note.where(job_id: @job.id).order("created_at DESC")
+    @note = Note.new
   end
 
   # GET /jobs/new

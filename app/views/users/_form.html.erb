@@ -1,9 +1,10 @@
 
-<%= form_for @user, html: { multipart: true } do |f| %>
+
 
  <div id="form-options">
  
  <% if current_user && (current_user.has_role? :admin) %>
+ <%= form_for @user, html: { multipart: true } do |f| %>
 
 <div class="field">
     <%= f.text_field :charity_name, :placeholder => 'Charity Name' %>
@@ -37,23 +38,30 @@
   </div>
   <div class="field">
   <center>
-    <%= f.file_field :avatar %>
+    <%= f.file_field :avatar, :placeholder => 'Charity Logo' %>
     </center>
   </div>
+
+<!--   blank fields in the database which are not require for the volunteer user -->
+
+
+
   <div class="actions">
  <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
-
+<%end%>
 
 
  <% if current_user && !(current_user.has_role? :admin) %>
+ <%= form_for @user, html: { multipart: true } do |f| %>
 <!-- for a volunteer registration, anyone can do this -->
     <h4> As a volunteer you do not have access to this page!</h4>
-
+<% end %>
  <% end %>
 
  <% if !(current_user) %>
+  <%= form_for @user, html: { multipart: true } do |f| %>
 <!-- for a volunteer registration, anyone can do this -->
     <div class="field">
       <%= f.text_field :first_name, :placeholder => 'First Name'  %>
@@ -87,6 +95,11 @@
       <%= f.file_field :avatar %>
       </center>
     </div>
+
+    <!--   blank fields in the database which are not require for the volunteer user -->
+
+
+
     <div class="actions">
    <%= f.submit class: 'btn btn-primary' %>
     </div>

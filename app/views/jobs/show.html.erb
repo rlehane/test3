@@ -133,14 +133,35 @@
                 <%end%>
 
             <br>
-             <%= link_to "Write Comment", new_job_note_path(@job), class: "btn btn-primary" %>  
+             <!--<%= link_to "Write Comment", new_job_note_path(@job), class: "btn btn-primary" %> -->
+
+             
+  <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Write a Comment</a>
+
+          <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h2 id="myModalLabel">Add Comment</h2>
+            </div>
+            <div class="modal-body">
+              <p>Ask a question, share your opinions or even show your support for this event by writing a comment</p>
+                <%= render 'notes/form' %>
+            </div>
+            <div class="modal-footer">
+            <center>
+              <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
+              </center>
+
+<!--               <button class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div> 
 
 
             <br>
             <br>
 
           </div>
-            <% if current_user.has_role? :admin %>
+            <% if (current_user.has_role? :admin) || (current_user.has_role? :charity) %>
             <center>
               <h1> Signed up volunteers </h1>
               <% @job.votes_for.voters.each do |p| %> <%= link_to p.email, p %> <% end %>
@@ -153,4 +174,6 @@
 </div>
 </div>
 </div>
+
+
 

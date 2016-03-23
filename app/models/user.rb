@@ -18,16 +18,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :jobs, dependent: :destroy
-  validates :first_name,
-            presence: true
-  validates :last_name,
-            presence: true
-  validates :occupation,
-            presence: true
-  validates :location,
-            presence: true
-  validates :about,
-            presence: true
+
                   
   validates :email,
             presence: true,

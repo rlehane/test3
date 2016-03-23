@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
-      skip_authorization_check
+  skip_authorization_check
+
   def new
   end
   def create
@@ -8,8 +9,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
 
-      if current_user.has_role? :admin
-      redirect_to dashboard_path, notice: 'Log in successful!'
+      if (current_user.has_role? :admin) || (current_user.has_role? :charity)
+        redirect_to dashboard_path, notice: 'Log in successful!'
       else
         redirect_to current_user, notice: 'Log in successful!'
       end

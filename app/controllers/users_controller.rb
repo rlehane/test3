@@ -13,14 +13,15 @@ skip_authorization_check
   def menu
     @users = User.all
 
-  if params[:tag]
-    @users = User.tagged_with(params[:tag])
-  else
-    @users = User.all
+    if params[:tag]
+      @users = User.tagged_with(params[:tag])
+    else
+      @users = User.all
+    end
   end
 
 
-def index
+  def index
     @users = User.all
   end
 
@@ -44,16 +45,26 @@ def index
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    if current_user.has_role? :admin
+      @charity = User.new(charity_params)
+      @charity.add_role "charity"
+      if @charity.save!
+        redirect_to @charity
+      else 
+        redirect_to action: :new
+      end
+    else 
+      @user = User.new(user_params)
 
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to @user, notice: 'You are now a TFC volunteer!'
-    else
-      render :new
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to @user, notice: 'You are now a TFC volunteer!'
+      else
+        render :new
+      end
     end
   end
-end
+
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
@@ -77,14 +88,14 @@ end
 
     # Only allow a trusted parameter "white list" through.
   def user_params
-
-  if current_user && (current_user.has_role? :admin) 
-      params.require(:user).permit(:charity_name, :first_name, :last_name, :location, :about, :email, :password, :password_confirmation, :avatar, :phone, :tax_number)
-    end
-  if !(current_user) 
       params.require(:user).permit(:first_name, :last_name, :hobbies, :occupation, :location, :about, :tag_list, :email, :password, :password_confirmation, :avatar, :roles[])
-    end
   end
+
+  def charity_params
+      params.require(:user).permit(:charity_name, :first_name, :last_name, :location, :about, :email, :password, :password_confirmation, :avatar, :phone, :tax_number)
+  end
+ 
+
 
 
 

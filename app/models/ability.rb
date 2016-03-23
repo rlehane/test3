@@ -9,6 +9,8 @@ class Ability
     if user && (user.has_role? :admin)
       can :manage, :all  # can manage (Read, Create, Update, Destroy, ...) everything
       can :access, :rails_admin
+    elsif user && (user.has_role? :charity)
+      can :manage, :all
     else 
         can :update, Job do |job|
          job.try(:user) == user
