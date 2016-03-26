@@ -1,15 +1,9 @@
 
 <div class = "container">
 <br>
-  <center>
-  <h2>Your Search Noticeboard results</h2>
-  </center>
-      <div align="left">
-        <%= link_to "All Job", noticeboard_path, :class => 'btn btn-info' %>
-      </div>
-      <br>
    <div class="row">
     <% @jobs.each do |job| %>
+    <% if (current_user.has_role? :charity) && (current_user.id == @job.user_id)%>
       <div class="col-sm-6 col-md-3">
 
         <div class="thumbnail">
@@ -23,5 +17,6 @@
         </div>
       </div>
     <% end %>
+    <% end %>s
    </div>
   </div>

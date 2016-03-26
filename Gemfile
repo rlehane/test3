@@ -26,11 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1', '>= 3.1.10'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
 gem 'cocaine', '~> 0.5.8'
 
-# gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
 gem 'acts-as-taggable-on', '~> 3.5'
@@ -39,8 +36,6 @@ gem 'searchkick', '~> 1.2', '>= 1.2.1'
 
 gem 'acts_as_votable', '~> 0.10.0'
 
-gem 'masonry-rails', '~> 0.2.4'
-
 gem 'rolify', '~> 5.0'
 
 gem 'cancancan', '~> 1.13', '>= 1.13.1'
@@ -48,10 +43,11 @@ gem 'cancancan', '~> 1.13', '>= 1.13.1'
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 gem 'rails_admin', '~> 0.8.1'
+
+
+# gem 'masonry-rails', '~> 0.2.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

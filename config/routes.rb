@@ -38,12 +38,13 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'volunteers', to: 'pages#volMenu', as: 'volunteers'
   get 'charities_menu', to: 'pages#charMenu', as: 'charities_menu'
- get 'newjob', to: 'jobs#new', as: 'newjob'
+  get 'newjob', to: 'jobs#new', as: 'newjob'
   # get 'about', to: 'pages/landing#about-us', as: 'about' 
   get 'charForm', to: 'contacts#new', as: 'charForm'
   get 'register', to: 'charity#form', as: 'register'
   get 'noticeboard', to: 'jobs#index', as: 'noticeboard'
   get 'notice', to: 'jobs#show', as: 'notice'
+  get 'our_jobs', to: 'jobs#our_jobs', as: 'our_jobs'
   # get 'profile', to: 'users#show.current_user', as: 'profile'
   resources :users
   
