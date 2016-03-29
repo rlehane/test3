@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>TFC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %> 
@@ -33,8 +34,7 @@
         <div class="collapse navbar-collapse">
 
           <ul class="nav navbar-nav navbar-left">  
-                    <br>
-          <br>  
+    
            <% if current_user.blank? %>            
             <li class="scroll active">
               <%= link_to "Charities", charities_menu_path %>
