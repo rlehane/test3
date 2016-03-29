@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   resourcify
   acts_as_voter
+  acts_as_taggable_array_on :skills
 
   rolify :before_add => :before_add_method
     def before_add_method(role)
@@ -14,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :jobs
   has_many :notes, dependent: :destroy
 
-  acts_as_taggable
+
   has_secure_password
 
   has_many :jobs, dependent: :destroy

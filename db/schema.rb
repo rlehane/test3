@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160313004327) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -33,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160313004327) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
+    t.integer  "user_id"
     t.string   "charity"
     t.text     "description"
     t.date     "date"
@@ -45,7 +49,6 @@ ActiveRecord::Schema.define(version: 20160313004327) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "user_id"
     t.integer  "category_id"
     t.integer  "cached_votes_total",      default: 0
     t.integer  "cached_votes_score",      default: 0
@@ -56,13 +59,13 @@ ActiveRecord::Schema.define(version: 20160313004327) do
     t.float    "cached_weighted_average", default: 0.0
   end
 
-  add_index "jobs", ["cached_votes_down"], name: "index_jobs_on_cached_votes_down"
-  add_index "jobs", ["cached_votes_score"], name: "index_jobs_on_cached_votes_score"
-  add_index "jobs", ["cached_votes_total"], name: "index_jobs_on_cached_votes_total"
-  add_index "jobs", ["cached_votes_up"], name: "index_jobs_on_cached_votes_up"
-  add_index "jobs", ["cached_weighted_average"], name: "index_jobs_on_cached_weighted_average"
-  add_index "jobs", ["cached_weighted_score"], name: "index_jobs_on_cached_weighted_score"
-  add_index "jobs", ["cached_weighted_total"], name: "index_jobs_on_cached_weighted_total"
+  add_index "jobs", ["cached_votes_down"], name: "index_jobs_on_cached_votes_down", using: :btree
+  add_index "jobs", ["cached_votes_score"], name: "index_jobs_on_cached_votes_score", using: :btree
+  add_index "jobs", ["cached_votes_total"], name: "index_jobs_on_cached_votes_total", using: :btree
+  add_index "jobs", ["cached_votes_up"], name: "index_jobs_on_cached_votes_up", using: :btree
+  add_index "jobs", ["cached_weighted_average"], name: "index_jobs_on_cached_weighted_average", using: :btree
+  add_index "jobs", ["cached_weighted_score"], name: "index_jobs_on_cached_weighted_score", using: :btree
+  add_index "jobs", ["cached_weighted_total"], name: "index_jobs_on_cached_weighted_total", using: :btree
 
   create_table "notes", force: :cascade do |t|
     t.text     "comment"
@@ -80,28 +83,8 @@ ActiveRecord::Schema.define(version: 20160313004327) do
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
-  add_index "roles", ["name"], name: "index_roles_on_name"
-
-  create_table "taggings", force: :cascade do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context",       limit: 128
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
-
-  create_table "tags", force: :cascade do |t|
-    t.string  "name"
-    t.integer "taggings_count", default: 0
-  end
-
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
+  add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -111,13 +94,13 @@ ActiveRecord::Schema.define(version: 20160313004327) do
     t.string   "location"
     t.text     "about"
     t.string   "password_digest"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string   "skills",              default: [],              array: true
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.integer  "roles_mask"
     t.string   "charity_name"
     t.integer  "phone"
     t.integer  "tax_number"
@@ -128,7 +111,7 @@ ActiveRecord::Schema.define(version: 20160313004327) do
     t.integer "role_id"
   end
 
-  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"
@@ -142,7 +125,7 @@ ActiveRecord::Schema.define(version: 20160313004327) do
     t.datetime "updated_at"
   end
 
-  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
-  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
 end

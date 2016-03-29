@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use pg as the database for Active Record
+gem 'pg'
+gem 'rails_12factor', group: :production
+
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
@@ -24,13 +26,14 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
+
 gem 'bcrypt', '~> 3.1', '>= 3.1.10'
 
 gem 'cocaine', '~> 0.5.8'
 
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
-gem 'acts-as-taggable-on', '~> 3.5'
+gem 'acts-as-taggable-array-on'
 
 gem 'searchkick', '~> 1.2', '>= 1.2.1'
 

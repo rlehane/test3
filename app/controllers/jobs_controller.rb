@@ -70,6 +70,7 @@ skip_authorization_check
     redirect_to @job, notice: 'Thanks for volunteering'
   end
 
+#for undoing joining an event
   def downvote
     @job.downvote_from current_user
     redirect_to @job

@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :location
       t.text :about
       t.string :password_digest
+      t.string :skills, array: true, default: '{}'
 
       t.timestamps null: false
     end

@@ -15,14 +15,13 @@
         <%= link_to "All Volunteers", vols_menu_path, :class => 'btn btn-info' %>
       </div>
        <div class="vol-header">
-        <div id="tag_cloud">
-        <% tag_cloud User.tag_counts, %w[s m l] do |tag, css_class| %>
-          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-        <% end %>
-        </div>
     </div>
-    <br>
 
+    <br>
+     <% User.all_skills.each do |skill| %>
+     <%= link_to skill, {action: :search, search: skill, tag: true}  %>
+     <%end%>
+ 
    <div class="row">
           <% @users.each do |user| if !(user.has_role? :charity) && !(user.has_role? :admin) %>
 
@@ -45,8 +44,9 @@
 
         <div class="vol-line">  
         <strong>Skills:</strong>
+                  <%= user.skills.join(', ') %>
         <center>
-            <%= raw user.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+
         </center>
         </div>
 
