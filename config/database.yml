@@ -16,8 +16,6 @@ test:
   database: TFCtest
 
 production:
-  <<: *default
-  database: TFCproduction
-  username: ruth
-  password: TFC
+  url: <%= ENV['DATABASE_URL'] %>
+
 
