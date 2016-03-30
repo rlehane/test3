@@ -1,5 +1,7 @@
 <div id = "charMenu">
-<div align="center">
+ <div class="text-center col-md-12 ">
+<div class= "panel">
+
  <h2>Charity Application</h2>
   <h3>Send us an application to become a TFC charity</h3>
 
@@ -10,7 +12,7 @@
       </div>
       <div class="field">
       <%= label_tag 'Contact email' %><br>
-      <%= f.input_field :email, :required => true, :placeholder => 'example@example.com' %>
+      <%= f.input_field :email, :required => true, :placeholder => 'example@example.com', error: 'Email is mandatory, please specify one' %>
       </div>
       <div class="field">
       <%= label_tag 'Charity details' %><br>
@@ -40,3 +42,5 @@
   <% end %>
 </div> 
 </div>
+</div>
+
