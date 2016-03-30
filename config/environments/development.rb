@@ -9,6 +9,8 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  #hellooo
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -39,7 +41,7 @@ Rails.application.configure do
 
   Paperclip.options[:command_path] = "/usr/local/bin/convert"
 
-  Paperclip::Attachment.default_options[:default_url] = asset_path "assets/missing.png"
+  # Paperclip::Attachment.default_options[:default_url] = asset_path "assets/missing.png"
 
 
   # Raises error for missing translations
