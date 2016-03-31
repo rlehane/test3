@@ -2,7 +2,8 @@
 <div class = "container">
 <br>
    <div class="row">
-     <% if (current_user) && (current_user.has_role? :charity) && (current_user.id == @job.user_id)%>
+    <% if current_user %>
+     <% (current_user.has_role? :charity) && (current_user.id == @job.user_id)%>
     <% @jobs.each do |job| %>
     <% if (current_user.has_role? :charity) && (current_user.id == @job.user_id)%>
       <div class="col-sm-6 col-md-3">
