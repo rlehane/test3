@@ -3,6 +3,20 @@
     <br>
     <br>
     <br>
+
+          <ul class="nav nav-pills">
+          <li role="presentation">
+        <%= link_to "All Volunteers", vols_menu_path, :class => 'btn btn-info' %>
+          </li>
+          <% User.all_skills.each do |skill| %>
+          <li role="presentation">
+     <%= link_to skill, {action: :search, search: skill, tag: true}  %>
+          </li>
+          <% end %>            
+          <% yield %>
+      </ul>
+<br>
+<br>
   <h2>Search Volunteers</h2>
     <div class = "search_bar">
            <%= form_tag search_users_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
@@ -16,17 +30,6 @@
       </div>
 
 
-      <ul class="nav nav-pills">
-          <li role="presentation">
-        <%= link_to "All Volunteers", vols_menu_path, :class => 'btn btn-info' %>
-          </li>
-          <% User.all_skills.each do |skill| %>
-          <li role="presentation">
-     <%= link_to skill, {action: :search, search: skill, tag: true}  %>
-          </li>
-          <% end %>            
-          <% yield %>
-      </ul>
 
 
 
