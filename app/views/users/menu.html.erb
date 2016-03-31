@@ -21,8 +21,10 @@
     </div>
 
     <br>
+   <div class="skill_list"> 
      <% User.all_skills.each do |skill| %>
      <%= link_to skill, {action: :search, search: skill, tag: true}  %>
+    </div>
      <%end%>
  
    <div class="row">
