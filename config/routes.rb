@@ -28,24 +28,30 @@ Rails.application.routes.draw do
   # root 'charities#index'
 
   resources :sessions, only: [:new, :create, :destroy]
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
+
   get 'signup', to: 'users#new', as: 'signup'
   get 'user_show', to: 'users#show', as: 'user_show'
   get 'vols_menu', to: 'users#menu', as: 'vols_menu'
   get 'dashboard', to: 'users#dashboard', as: 'dashboard' 
   get 'chars', to: 'users#chars', as: 'chars' 
   get 'dash', to: 'users#dash', as: 'dash' 
-  get 'login', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+ 
   get 'volunteers', to: 'pages#volMenu', as: 'volunteers'
   get 'charities_menu', to: 'pages#charMenu', as: 'charities_menu'
   get 'newjob', to: 'jobs#new', as: 'newjob'
-  # get 'about', to: 'pages/landing#about-us', as: 'about' 
+
   get 'charForm', to: 'contacts#new', as: 'charForm'
   get 'register', to: 'charity#form', as: 'register'
   get 'noticeboard', to: 'jobs#index', as: 'noticeboard'
   get 'notice', to: 'jobs#show', as: 'notice'
   get 'our_jobs', to: 'jobs#our_jobs', as: 'our_jobs'
+
+  
   # get 'profile', to: 'users#show.current_user', as: 'profile'
+    # get 'about', to: 'pages/landing#about-us', as: 'about' 
   resources :users
   
   root 'pages#landing'
