@@ -21,11 +21,23 @@
     </div>
 
     <br>
-   <div class="skill_list"> 
-     <% User.all_skills.each do |skill| %>
+
+
+      <ul class="nav nav-pills">
+          <li role="presentation">
+        <%= link_to "All Volunteers", vols_menu_path, :class => 'btn btn-info' %>
+          </li>
+          <% User.all_skills.each do |skill| %>
+          <li role="presentation">
      <%= link_to skill, {action: :search, search: skill, tag: true}  %>
-    </div>
-     <%end%>
+          </li>
+          <% end %>            
+          <% yield %>
+      </ul>
+
+
+
+
  
    <div class="row">
           <% @users.each do |user| if !(user.has_role? :charity) && !(user.has_role? :admin) %>
@@ -46,7 +58,6 @@
           <%= user.location %>
         </div>
 
-
         <div class="vol-line">  
         <strong>Skills:</strong>
           <%= user.skills.join(', ') %>
@@ -55,11 +66,10 @@
         </center>
         </div>
 
-  </div>
-    </div>
+        </div>
+        </div>
          <% end %>
      <% end %>
-
     </div>
 
 

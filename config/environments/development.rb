@@ -41,7 +41,7 @@ Rails.application.configure do
 
   Paperclip.options[:command_path] = "/usr/local/bin/convert"
 
-  Paperclip::Attachment.default_options[:default_url] = asset_path "assets/missing.png"
+  # Paperclip::Attachment.default_options[:default_url] = asset_path "assets/missing.png"
 
 
   # Raises error for missing translations
