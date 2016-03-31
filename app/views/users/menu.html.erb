@@ -2,8 +2,9 @@
   <div class = "container">
     <br>
     <br>
-    <br>
 
+
+  <h2>Search Volunteers</h2>
           <ul class="nav nav-pills">
           <li role="presentation">
         <%= link_to "All Volunteers", vols_menu_path, :class => 'btn btn-info' %>
@@ -16,8 +17,8 @@
           <% yield %>
       </ul>
 <br>
-<br>
-  <h2>Search Volunteers</h2>
+
+
     <div class = "search_bar">
            <%= form_tag search_users_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
               <p>
