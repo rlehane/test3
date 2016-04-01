@@ -19,9 +19,9 @@
 
 
     <div class = "search_bar"
-           <%= form_tag search_users_path, method: :get, class: "navbar-form navbar-right", :input_html => {:maxlength => 15}, role: "search" do %>
+           <%= form_tag search_users_path, method: :get, class: "navbar-form navbar-right",  role: "search" do %>
               <p>
-              <%= text_field_tag :search, params[:search], class: "form-control", :placeholder => 'Search...' %>
+              <%= text_field_tag :search, params[:search], class: "form-control", :input_html => {:style => "20%", :maxlength => "15"}, :placeholder => 'Search...' %>
               <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
               </p>
               <%end%>
