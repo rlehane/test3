@@ -72,10 +72,10 @@
              <% if current_user %>
                 <% if current_user.has_role? :charity %>
                <% if controller.controller_name == "users" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
-                  <%= link_to "My Dashboard", 'users/dashboard' %>
+                  <%= link_to "My Dashboard", dashboard_path %>
                 <% elsif current_user.has_role? :admin %>
                   <% if controller.controller_name == "jobs" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
-                  <%= link_to "Dashboard", 'users/dash' %>  
+                  <%= link_to "Dashboard", dash_path %>  
                <% else %>
                     <% if controller.controller_name == "jobs" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
                   <%= link_to "My Profile", current_user %>
