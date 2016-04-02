@@ -59,7 +59,6 @@
             <% if controller.controller_name == "pages" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
               <%= link_to "Home", root_path %>
             </li>
-            <% if controller.controller_name == "pages" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
               <%= link_to "About Us", root_path %>
            </li>
             <% if controller.controller_name == "users" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
@@ -70,6 +69,9 @@
            </li>
 
              <li class="scroll">
+             <% if !(current_user) %>
+                <%= link_to "Log In", login_path %>
+                <%end%>
              <% if current_user %>
                 <% if current_user.has_role? :charity %>
                <% if controller.controller_name == "users" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
@@ -78,7 +80,6 @@
                   <% if controller.controller_name == "jobs" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
                   <%= link_to "Dashboard", 'dash' %>  
                <% else %>
-                    <% if controller.controller_name == "jobs" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
                   <%= link_to "My Profile", current_user %>
                 <%end%>
               </li>
