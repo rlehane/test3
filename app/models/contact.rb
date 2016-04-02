@@ -13,7 +13,7 @@ class Contact < MailForm::Base
     {
       :subject => "Charity Application",
       :to => "tfctimeforcharity@gmail.com",
-      :from => %("#{name}" <#{email}>)
+      :from => "ruthlehane0@gmail.com"
     }
   end
 end
