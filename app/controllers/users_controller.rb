@@ -11,15 +11,14 @@ skip_authorization_check
     else
       @users = User.all
     end
+  end
 
       def searchhhh
-    if params[:search].present?
-      @users = User.search(params[:search])
+    if params[:searchhh].present?
+      @users = User.search(params[:searchhhh])
     else
       @users = User.all
     end
-  end
-
   end
 
   # GET /users

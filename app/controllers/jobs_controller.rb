@@ -12,6 +12,8 @@ skip_authorization_check
     end
   end
 
+  
+
   def index
     @jobs = Job.all
 
