@@ -1,17 +1,13 @@
-<div id="Vol-menu">
-      <div class = "container">
-<br>
-<br>
-    <br>
 
-    
+<div class = "container">
+<br>
   <center>
-  <h2>Your Search Volunteers results</h2>
+  <h2>Your Search results</h2>
   </center>
       <div align="left">
         <%= link_to "All Volunteers", vols_menu_path, :class => 'btn btn-info' %>
       </div>
-      <div class = "container">
+      <br>
    <div class="row">
     <% @users.each do |user| %>
       <div class="col-sm-6 col-md-3">
@@ -31,8 +27,3 @@
     <% end %>
    </div>
   </div>
-  </div>
-  </div>
-
-
-  
