@@ -69,13 +69,13 @@
              <li class="scroll">
              <% if current_user %>
                 <% if current_user.has_role? :charity %>
-               <% if controller.controller_name == "users" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
-                  <%= link_to "My Dashboard", dashboard_path %>
+                <li class="scroll"> 
+                  <%= link_to "Dashboard", dashboard_path %>
                 <% elsif current_user.has_role? :admin %>
-                  <% if controller.controller_name == "users" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
+                <li class="scroll"> 
                   <%= link_to "Dashboard", dash_path %>  
                <% else %>
-                    <% if controller.controller_name == "users" %> <li class="scroll active"> <% else %> <li class="scroll"> <% end %>
+                <li class="scroll"> 
                   <%= link_to "My Profile", current_user %>
                 <%end%>
               </li>
