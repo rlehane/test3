@@ -20,10 +20,10 @@
 <br>
 
 
-    <div class = "search_bar"
+    <div class = "search_bar">
            <%= form_tag search_users_path, method: :get, class: "navbar-form navbar-right",  role: "search" do %>
               <p>
-              <%= text_field_tag :search, params[:search], class: "form-control", :input_html => {:width => "20%", :maxlength => "15"}, :placeholder => 'Search...' %>
+              <%= text_field_tag :search, params[:search], class: "form-control", :placeholder => 'Search...' %>
               <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
               </p>
               <%end%>

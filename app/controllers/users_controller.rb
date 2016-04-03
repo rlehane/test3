@@ -13,13 +13,6 @@ skip_authorization_check
     end
   end
 
-      def searchhhh
-    if params[:searchhh].present?
-      @users = User.search(params[:searchhhh])
-    else
-      @users = User.all
-    end
-  end
 
   # GET /users
   def menu
