@@ -25,7 +25,7 @@ class CharitiesController < ApplicationController
 
     if @charity.save
       session[:charity_id] = @charity.id
-      redirect_to @charity, notice: 'Charity was successfully created.'
+      redirect_to dash_path, notice: 'Charity was successfully created.'
     else
       render :new
     end

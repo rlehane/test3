@@ -55,7 +55,7 @@ skip_authorization_check
       @charity = User.new(charity_params)
       @charity.add_role "charity"
       if @charity.save!
-        redirect_to @charity
+        redirect_to dash_path
       else 
         redirect_to action: :new
       end
