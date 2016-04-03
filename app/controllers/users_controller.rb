@@ -66,7 +66,7 @@ skip_authorization_check
       if @user.save
         session[:user_id] = @user.id
         if current_user.has_role? :charity
-          redirect_to dashboard_path, notice: 'You have registered a new charity!'
+          redirect_to dash_path, notice: 'You have registered a new charity!'
         else
           redirect_to @user, notice: 'You are now a TFC volunteer!'
         end
