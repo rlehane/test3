@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-  # before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
   # GET /jobs
 skip_authorization_check
 
@@ -12,7 +12,7 @@ skip_authorization_check
     end
   end
 
-  
+
 
   def index
     @jobs = Job.all
@@ -76,6 +76,10 @@ skip_authorization_check
   def downvote
     @job.downvote_from current_user
     redirect_to @job
+  end
+
+  def our_jobs
+    @jobs = current_user.jobs
   end
 
   private
