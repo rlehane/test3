@@ -25,7 +25,13 @@ has_many :notes
   validates :location,
             presence: true
 
-  has_attached_file :image
+    has_attached_file :image,
+    :storage => :s3,
+    :bucket => 'tfc1',
+    :s3_credentials => {
+      :access_key_id => 'AKIAJG3BFNU2BBOPPCJQ',
+      :secret_access_key => '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'
+    }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 end
