@@ -41,7 +41,13 @@ class User < ActiveRecord::Base
   end
 
 
-  has_attached_file :avatar
+has_attached_file :avatar,
+    :storage => :s3,
+    :bucket => 'tfc1',
+    :s3_credentials => {
+      :access_key_id => 'AKIAJG3BFNU2BBOPPCJQ',
+      :secret_access_key => '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'
+    }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
 end
