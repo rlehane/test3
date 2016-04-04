@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   # GET /jobs
 skip_authorization_check
 
