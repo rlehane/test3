@@ -48,7 +48,7 @@
 
   <div class="Profile-links">  
  <% if current_user %>
-
+  <%= link_to 'Back', vols_menu_path,  :class => 'btn btn-info' %>
    <%if (current_user.id == @user.id) || (current_user.has_role? :admin) %>
     <%= link_to 'Edit', edit_user_path(@user), :class => 'btn btn-primary' %> 
     <%= link_to 'Back', vols_menu_path,  :class => 'btn btn-info' %>
