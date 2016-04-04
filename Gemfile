@@ -33,6 +33,8 @@ gem 'cocaine', '~> 0.5.8'
 
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
+gem 'aws-sdk'
+
 gem 'acts-as-taggable-array-on'
 
 gem 'searchkick', '~> 1.2', '>= 1.2.1'
